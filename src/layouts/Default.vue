@@ -1,17 +1,16 @@
 <template>
   <div class="min-h-screen font-sans bg-teal-100 text-gray-900">
-    <header class="py-4 flex justify-between items-center px-8">
+    <header class="py-4 flex justify-between items-center px-8 print:hidden">
       <g-link to="/" class="text-xl text-green-500">
         <svg-logo class="h-12"></svg-logo>
       </g-link>
       <nav class="flex items-center -mx-2">
         <g-link class="mx-2 underline-blue-500 hover:underline" to="/">Home</g-link>
         <g-link class="mx-2 underline-blue-500 hover:underline" to="/about">About</g-link>
+        <g-link class="mx-2 underline-blue-500 hover:underline" to="/resume">Resume</g-link>
       </nav>
     </header>
-    <main class="px-8 py-3 mx-auto lg:w-1/2">
-      <slot/>
-    </main>
+    <slot/>
   </div>
 </template>
 
@@ -47,6 +46,13 @@ h5, h6 {
 h1 {
   @apply text-3xl
 }
+@media print {
+  html,
+  body {
+    font-size: 12pt;
+    @apply font-sans;
+  }
+}
 @tailwind components;
 .logo .cube, .logo .shadow {
   transition: transform .3s linear;
@@ -61,4 +67,10 @@ h1 {
   }
 }
 @tailwind utilities;
+
+@media print {
+  .print\:hidden {
+    display: none;
+  }
+}
 </style>
