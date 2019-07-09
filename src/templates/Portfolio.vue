@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <h2 class="text-3xl font-medium text-center mb-2" v-text="$page.project.title"></h2>
-    <div class="flex justify-center items-center text-sm italic mb-2">
+    <div class="flex justify-center items-center text-sm italic mb-12">
       <span>
           Started - <span v-text="$page.project.start"></span>
       </span>
@@ -10,7 +10,6 @@
           Ended - <span v-text="$page.project.end"></span>
       </span>
     </div>
-    <hr class="my-8 border-t border-gray-500 w-5/6">
     <article class="md-content" v-html="$page.project.content">
     </article>
   </Layout>
