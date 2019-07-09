@@ -8,7 +8,6 @@
           <span class="text-teal-500 font-medium ml-1">Saleem</span>
         </g-link>
         <nav class="flex items-center -mx-2">
-          <g-link class="nav-link" to="/about">About</g-link>
           <g-link class="nav-link" to="/work">Work</g-link>
           <g-link class="nav-link" to="/blog">Blog</g-link>
           <g-link class="nav-link" to="/resume">Resume</g-link>
