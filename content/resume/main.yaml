@@ -1,0 +1,18 @@
+title: Ruman Saleem
+subtitle: Web Developer
+links:
+  - target: https://github.com/rumansaleem
+    icon: fontawesome.brands.github
+    text: github.com/rumansaleem
+
+  - target: https://rumansaleem.github.io
+    icon: zondicons.network
+    text: rumansaleem.github.io
+
+  - target: mailto:ruman63@gmail.com
+    icon: fontawesome.solid.at
+    text: ruman63@gmail.com
+    
+  - target: mailto:+918510052301
+    icon: fontawesome.solid.phone-alt
+    text: +91-8510052301

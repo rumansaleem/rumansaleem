@@ -1,0 +1,34 @@
+- header: Frameworks
+  list:
+    - Laravel
+    - Vue.js
+    - Tailwind CSS
+
+- header: Languages
+  list: 
+    - PHP
+    - JavaScript
+    - Python
+    - Java
+    - C++
+
+- header: Databases
+  list:
+    - MySQL
+    - SQLite
+    - Redis
+
+- header: Tooling
+  list: 
+    - Git
+    - Webpack
+    - npm / Yarn
+    - Composer
+
+- header: Others
+  list: 
+    - AWS Lambda, EC2, etc
+    - Heroku
+    - Linux
+    - Vector Drawing - Inkscape
+    - UI Designing

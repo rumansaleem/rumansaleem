@@ -1,0 +1,30 @@
+- title: SIP Wealth
+  subtitle: Freelance Web Developer
+  timeline: February 2018 - July 2018
+  show: true
+  link: 
+    icon: zondicons.link
+    target: https://sipwealth.co.in
+    text: sipwealth.co.in
+  source:
+    icon: github
+    target: https://github.com/rumansaleem/sip-portal
+    text: github.com/rumansaleem/sip-portal
+  details:
+    - developed a marketing website for 'SIP Wealth'.
+    - implemented reactive SIP & tax calculators with charts and tables on website.
+    - designed and developed a portal from scratch, for online mutual fund investment and previewing customer's investement history with charts and tables.
+    - followed TDD process to develop the portal.
+
+- title: Pure Media Imagination
+  subtitle: Web Developer (Intern)
+  timeline: June 2017 - July 2017
+  show: true
+  link:
+    icon: zondicons.link
+    target: https://thepuremedia.com
+    text: thepuremedia.com
+  details:
+    - developed a marketing website for media agency 'Pure Media Imagination'.
+    - customized an HTML template to better suit their needs and enhance UI effects.
+    - developed admin only area to manage their portfolio, users (admin & super admin), change password etc.

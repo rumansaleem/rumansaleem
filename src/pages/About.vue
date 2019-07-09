@@ -15,7 +15,8 @@
 <script>
 export default {
   metaInfo: {
-    title: 'About us'
-  }
+    title: 'About Me'
+  },
+  components: {Zondicon, FaIcon},
 }
 </script>

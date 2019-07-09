@@ -1,0 +1,6 @@
+- title: Smart India Hackathon
+  subtitle: Kotak Mahindra Bank
+  details:
+    - Our problem was to build a multilingual chat bot for banking system with support for Indic languages.
+    - I was responsible for converting user's speech to English text and translate English response from server to user's preferred language (text and audio).
+    - My team was runner-up in the contest.

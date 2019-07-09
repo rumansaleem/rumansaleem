@@ -1,90 +1,186 @@
 <template>
-  <Layout>
-    <div class="bg-teal-100 text-gray-900 min-h-screen flex font-sans">
-
-      <aside class="w-48 bg-teal-600 text-gray-200 py-6">
-        <div class="px-4 mb-4">
-          <g-image
-            class="block mx-auto w-24 rounded-full mb-2"
-            src="/images/ruman-saleem.jpg"
-            alt="Ruman Saleem, standing with a bag on shoulder, in front of a lawn"
-          />
-          <h1 class="font-bold text-lg text-center leading-tight">Ruman Saleem</h1>
-          <h3 class="font-semibold uppercase text-xs text-center text-xs text-gray-300">Web Developer</h3>
+    <Layout class="bg-white">
+    <div ref="resume" class="resume-wrapper bg-white text-gray-900 font-sans leading-tight">
+      <div class="personal-area mb-3">
+          <h1 class="font-thin text-3xl" v-text="main.title"></h1>
+          <h3 class="uppercase text-sm text-gray-600 mb-3" v-text="main.subtitle"></h3>
+          <ul class="text-sm">
+              <li class="py-1 flex items-center" v-for="link in main.links" :key="link.target">
+                  <svg-icon :icon="link.icon" class="h-current mr-2"></svg-icon>
+                  <a class="hover:underline" :href="link.target" v-text="link.text"></a>
+              </li>
+          </ul>
+      </div>
+      <resume-section class="education-area text-sm mb-2 font-thin">
+        <template slot="header">Education</template>
+        <div v-for="education in educations" class="mb-4" :key="education.title">
+            <div class="font-medium text-gray-700 mb-1">
+                <h4 class="text-gray-900" v-text="education.title"></h4>
+                <h5 class="text-xs font-semibold whitespace-no-wrap" v-text="education.subtitle"></h5>
+            </div>
+            <p v-if="education.institute" v-text="education.institute"></p>
+            <p v-if="education.board" v-text="education.board"></p>
+            <p v-if="education.score" v-text="education.score"></p>
         </div>
-        <details class="mb-3" open>
-          <summary class="font-semibold bg-teal-700 text-xs uppercase px-4 mb-2 cursor-pointer">
-            <h4 class="leading-none py-2">Contact Information</h4>
-          </summary>
-          <div class="px-4 text-xs">
-            <p>
-              <b>Email: </b>
-              <a class="hover:underline" href="mailto:ruman63@gmail.com">ruman63@gmail.com</a>
-            </p>
-            <p>
-              <b>Phone: </b>
-              <a class="hover:underline" href="tel:+918510052301">+918510052301</a>
-            </p>
+      </resume-section>
+      <resume-section class="skills-area text-sm mb-3">
+          <template slot="header">Skills</template>
+          <div v-for="skill in skills" :key="skill.header" class="mb-3">
+            <h4 class="text-xs uppercase text-gray-800 mb-1" v-text="skill.header"></h4>
+            <ul class="text-xs flex flex-wrap -m-1">
+                <li v-for="name in skill.list"
+                  :key="name"
+                  v-text="name"
+                  class="leading-none p-1 m-1 border border-gray-700"
+                ></li>
+            </ul>
           </div>
-        </details>
-        <details class="mb-3" open>
-          <summary class="font-semibold bg-teal-700 text-xs uppercase px-4 cursor-pointer">
-            <h4 class="leading-none py-2">Skills</h4>
-          </summary>
-          <div class="px-4 py-1 border-b border-teal-700 text-xs leading-tight">
-            <b>Laravel</b>
-            <p class="-mx-1">
-              <span class="progress-square bg-white mx-1"></span>
-              <span class="progress-square bg-white mx-1"></span>
-              <span class="progress-square bg-white mx-1"></span>
-              <span class="progress-square bg-white mx-1"></span>
-              <span class="progress-square mx-1"></span>
-            </p>
+      </resume-section>
+      <resume-section class="experience-area text-sm mb-2 font-thin">
+          <template slot="header">Work Experience</template>
+          <div class="flex mb-3" v-for="work in works" :key="work.title">
+              <div class="w-48 sm:w-1/3 lg:w-48 font-medium text-gray-700 pr-4">
+                  <h4 class="text-gray-900" v-text="work.title"></h4>
+                  <h5 class="text-xs font-semibold mb-1" v-text="work.subtitle"></h5>
+                  <p class="text-gray-600 text-xs font-semibold" v-text="work.timeline"></p>
+              </div>
+              <div class="ml-4 flex-1">
+                <ul class="list-disc pl-4">
+                    <li v-for="(sentence, index) in work.details" :key="index" v-html="sentence" class="mb-1"></li>
+                </ul>
+                <p v-if="work.link" class="flex items-center font-normal text-gray-900">
+                  <svg-icon class="h-current mr-2" :icon="work.link.icon"></svg-icon>
+                  <a  class="hover:underline" :href="work.link.target" v-text="work.link.text"></a>
+                </p>
+              </div>
           </div>
-          <div class="px-4 py-1 border-b border-teal-700 text-xs leading-tight">
-            <b>VueJS</b>
-            <p class="-mx-1">
-              <span class="progress-square bg-white mx-1"></span>
-              <span class="progress-square bg-white mx-1"></span>
-              <span class="progress-square bg-white mx-1"></span>
-              <span class="progress-square bg-white mx-1"></span>
-              <span class="progress-square mx-1"></span>
-            </p>
+      </resume-section>
+      <resume-section class="projects-area text-sm mb-2 font-thin">
+          <template slot="header">Projects</template>
+          <div class="flex mb-2" v-for="project in projects" :key="project.title">
+              <div class="w-48 sm:w-1/3 lg:w-48 font-medium text-gray-700 pr-4 leading-snug">
+                  <h4 class="text-gray-900" v-text="project.title"></h4>
+                  <h5 class="text-xs font-semibold" v-text="project.subtitle"></h5>
+              </div>
+              <div class="flex-1 pl-4">
+                <ul class="list-disc">
+                    <li v-for="(sentence, index) in project.details" :key="index" v-html="sentence" class="mb-1"></li>
+                </ul>
+              </div>
           </div>
-        </details>
-      </aside>
-      <main class="flex-1 p-4">
-        <p>
-          Hi! I am Ruman Saleem. I am a fullstack web developer.
-          Laravel + Vue is my preferred stack. Apart from Laravel and Vue, I know other tehnologies as well like - CodeIgniter, ExpressJS, NativeScript-Vue, React Native.
-          I am currently pursuing, masters degree in Computer Science at Delhi University.
-        </p>
-        <div class="print:hidden">hello there</div>
-      </main>
+      </resume-section>
+      <resume-section class="hackathons-area text-sm font-thin">
+          <template slot="header">Hackathons</template>
+          <div v-for="hackathon in hackathons" class="flex flex-row md:flex-col lg:flex-row" :key="hackathon.title">
+              <div class="w-48 md:w-full lg:w-48 font-medium text-gray-700 pr-4 lg:pr-4 md:pr-0 md:mb-4 lg:mb-0">
+                  <h4 class="text-gray-900" v-text="hackathon.title"></h4>
+                  <p class="text-xs font-semibold" v-text="hackathon.subtitle"></p>
+              </div>
+              <ul class="ml-4 flex-1 list-disc">
+                  <li v-for="(sentence, index) in hackathon.details" :key="index" class="mb-1" v-html="sentence"></li>
+              </ul>
+          </div>
+      </resume-section>
     </div>
-  </Layout>
+    <button @click="print" class="fixed bottom-0 right-0 mb-6 mr-6 bg-teal-500 w-12 h-12 rounded-full flex items-center justify-center shadow-md print:hidden">
+        <svg-icon icon="fontawesome.solid.print" class="w-4 h-4 fill-current text-white"></svg-icon>
+    </button>
+    </Layout>
 </template>
-
 <script>
+import ResumeSection from '../layouts/ResumeSection';
+import SvgIcon from '../components/SvgIcon';
+import main from '../../content/resume/main.yaml';
+import skills from '../../content/resume/skills.yaml';
+import projects from '../../content/resume/projects.yaml';
+import educations from '../../content/resume/education.yaml';
+import experience from '../../content/resume/experience.yaml';
+import hackathons from '../../content/resume/hackathons.yaml';
+
 export default {
   metaInfo: {
     title: "Resume"
-  }
+  },
+  components: { ResumeSection, SvgIcon },
+  data() {
+    return {
+      main, skills, projects, educations, hackathons, experience
+    }
+  },
+  computed: {
+    works() {
+      return this.experience.filter(work => work.show);
+    },
+    projectsWithSource() {
+      return this.projects.filter(p => p.source);
+    }
+  },
+  methods: {
+      print: () => window.print()
+  },
 };
 </script>
-<style scoped lang="postcss">
+<style lang="postcss">
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,500i,700,700i,900&display=swap');
 html,
 body {
-  font-size: calc(12px + 0.5vw);
+  font-size: calc(11px + 0.4vw);
+  font-family: 'Roboto', sans-serif;
 }
 summary {
   @apply flex;
 }
-.progress-square {
-  @apply inline-block w-2 h-2 border border-white;
+
+.resume-wrapper {
+  display: grid;
+  grid-template-areas: 
+    'main' 
+    'experience'
+    'projects'
+    'education'
+    'skills' 
+    'hackathons';
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+  grid-auto-rows: auto;
 }
-@page {
-  size: 8.5in 11in;
-  margin: 0cm;
+
+@screen md {
+  .resume-wrapper {
+    grid-template-areas: 
+      'main experience'
+      'education experience'
+      'skills projects'
+      'hackathons projects';
+    grid-template-columns: 20rem 1fr;
+    grid-gap: 1.5rem;
+    grid-template-rows: repeat(4, auto);
+  }
+}
+@screen lg {
+  .resume-wrapper {
+    grid-template-areas:
+      'main experience'
+      'education experience'
+      'education projects'
+      'skills projects'
+      'skills hackathons';
+    grid-template-rows: repeat(3, auto) repeat(2, minmax(auto, 16rem));
+  }
+}
+.main-area {
+  grid-area: main;
+}
+.education-area {
+  grid-area: education;
+}
+.experience-area {
+  grid-area: experience;
+}
+.projects-area {
+  grid-area: projects;
+}
+.hackathons-area {
+  grid-area: hackathons;
 }
 </style>

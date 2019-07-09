@@ -1,0 +1,33 @@
+- title: Sankalan Portal
+  subtitle: Laravel, Vue.js, Tailwind CSS
+  source:
+    icon: github
+    target: https://github.com/csdu/sankalan-portal
+    text: github.com/csdu/sankalan-portal
+  details:
+    - designed and developed website for annual technical festival organised by students of the department.
+    - implemented online registration system, quiz management and automated scoring.
+    - wrote automated feature tests, following TDD process along with continuous integration.
+    - handled deployment with SSL certificate and continuous deployment.
+
+- title: Buffer Cache Simulator
+  subtitle: Vue.js, Tailwind CSS
+  source:
+    icon: github
+    target: https://github.com/rumansaleem/buffercache-getblk
+    text: github.com/rumansaleem/buffercache-getblk
+  details:
+    - built a web based simulator to help people understand the working of buffer cache's getblk algorithm as per the UNIX System V.
+    - used Vue to render data driven visuals.
+    - used Vuex store for state management.
+
+- title: Social Campus
+  subtitle: Laravel, jQuery, Bootstrap
+  source:
+    target: https://github.com/rumansaleem/SocialCampus
+    text: github.com/rumansaleem/SocialCampus
+    icon: github
+  details:
+    - designed and developed social networking website for college students that featured real-time messaging, post sharing, comments.
+    - real-time messaging incorporated using an open source socket server and redis pub/sub.
+    - This project was done under a summer internship programme (ELITE).
