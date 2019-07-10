@@ -1,8 +1,17 @@
-// This is where project configuration and plugin options are located. 
-// Learn more: https://gridsome.org/docs/config
+const isProduction = process.env.NODE_ENV === 'production';
 
-// Changes here require a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  content: [
+    './src/**/*.html',
+    './src/**/*.vue',
+    './src/**/*.jsx',
+    // etc.
+  ],
+
+  // Include any special characters you're using in this regular expression
+  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+});
+
   
 module.exports = {
   siteName: 'Ruman Saleem',
@@ -65,7 +74,8 @@ module.exports = {
         plugins: [
           require('tailwindcss')('./tailwind.config.js'),
           require('postcss-nested'),
-          require('autoprefixer')
+          require('autoprefixer'),
+          ...isProduction ? [purgecss] : [],
         ],
       },
     },
