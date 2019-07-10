@@ -56,7 +56,7 @@ export default {
   .md-content h3,
   .md-content h4,
   .md-content h5 {
-    @apply font-semibold mb-3 mt-8;
+    @apply font-medium mb-3 mt-8;
   }
   .md-content h6 {
     @apply font-medium mb-2 mt-3;

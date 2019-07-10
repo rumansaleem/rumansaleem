@@ -20,7 +20,7 @@
     <footer class="bg-white text-gray-500 text-xs mt-4 print:hidden">
         <p class="text-center py-2 px-8 flex justify-between">
           <span><b>Ruman Saleem</b> &copy; 2019</span> 
-          <span>built with <a class="link text-gray-600 font-semibold" href="https://gridsome.org">Gridsome</a>, hosted by GitHub Pages</span>
+          <span>built with <a class="link text-gray-600 font-medium" href="https://gridsome.org">Gridsome</a>, hosted by GitHub Pages</span>
         </p>
     </footer>
   </div>
@@ -69,27 +69,41 @@ export default {
 </script>
 
 <style lang="postcss">
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap');
+
 html, body {
-  font-size: calc(14px + .3vw);
+  font-size: calc(13px + 0.25vw);
 }
+
+.smaller {
+  font-size: calc(11px + 0.25vw);
+}
+
 @tailwind base;
+
 h1, h2, h3, h4 {
-  @apply font-semibold;
+  @apply font-medium;
 }
+
 @page {
+  size: A4 portrait;
   margin: 1cm;
   font-size: 11pt;
   margin-right: .5cm;
 }
+
 details summary::-webkit-details-marker {
   display:none;
 }
+
 @tailwind components;
+
 .narrow-container {
   max-width: 768px;
 }
+
 .nav-link {
-  @apply mx-2 py-1 px-1 font-semibold uppercase text-sm tracking-wide relative leading-snug;
+  @apply mx-2 py-1 px-1 font-medium uppercase text-sm tracking-wide relative leading-snug;
 }
 .nav-link::after {
   content: '';
@@ -106,6 +120,7 @@ details summary::-webkit-details-marker {
 .nav-link:hover {
   @apply text-teal-600;
 }
+
 .ruman-saleem-logo_svg__cube, .ruman-saleem-logo_svg__shadow {
   transition: transform .3s linear;
   transform-origin: center;
@@ -122,11 +137,12 @@ details summary::-webkit-details-marker {
 }
 
 .link {
-  @apply text-teal-500
+  @apply text-teal-500;
 }
 .link:hover {
-  @apply underline
+  @apply underline;
 }
+
 @tailwind utilities;
 
 @media print {
@@ -134,4 +150,5 @@ details summary::-webkit-details-marker {
     display: none;
   }
 }
+
 </style>

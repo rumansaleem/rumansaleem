@@ -1,6 +1,6 @@
 <template>
     <article class="pb-12">
-        <div class="h-48 bg-cover flex items-center justify-center rounded text-black font-semibold shadow-md" 
+        <div class="h-48 bg-cover flex items-center justify-center rounded text-black font-medium shadow-md" 
             :class="coverClasses"
             :style="coverBackground"
         >

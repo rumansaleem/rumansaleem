@@ -5,7 +5,7 @@
         :src="about.image.src" 
         :alt="`A portrait of ${about.name}`"></g-image>
       <h2 class="text-3xl font-medium mb-1" v-text="about.name"></h2>
-      <h3 class="text-gray-600 uppercase font-semibold mb-6" v-text="about.title"></h3>
+      <h3 class="text-gray-600 uppercase font-medium mb-6" v-text="about.title"></h3>
       <ul class="flex justify-center items-center -mx-2 mb-6 text-lg">
         <li v-for="link in about.links" :key="link.name" class="mx-2">
           <a :href="link.target" :class="`text-gray-500 hover:text-${link.color}`">
