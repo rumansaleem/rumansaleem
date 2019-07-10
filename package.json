@@ -19,6 +19,7 @@
     "@gridsome/remark-prismjs": "^0.1.0",
     "@gridsome/source-filesystem": "^0.5.0",
     "@gridsome/transformer-remark": "^0.3.2",
-    "svg-to-vue-component": "^0.3.8"
+    "svg-to-vue-component": "^0.3.8",
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }

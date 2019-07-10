@@ -1,5 +1,8 @@
 const isProduction = process.env.NODE_ENV === 'production';
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
+
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [
     './src/**/*.html',
@@ -12,20 +15,27 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
 });
 
-  
 module.exports = {
   siteName: 'Ruman Saleem',
   titleTemlate: '%s | Ruman Saleem',
 
+  configureWebpack: {
+    plugins: [
+      new BundleAnalyzerPlugin(),
+    ],
+  },
+  
   chainWebpack(config, { isServer }) {
-    config.module.rules.delete('svg')
+
+    config.module.rules.delete('svg');
+    
     config.module.rule('svg')
       .test(/\.svg$/)
       .use('vue')
       .loader('vue-loader')
       .end()
       .use('svg-to-vue-component')
-      .loader('svg-to-vue-component/loader')
+      .loader('svg-to-vue-component/loader');
   },
   
   plugins: [
