@@ -48,18 +48,18 @@ export default {
 </script>
 <style lang="postcss">
   .md-content p {
-    @apply mb-4;
+    @apply mb-3;
   }
   .md-content h2 {
-    @apply font-medium mb-4;
+    @apply font-medium mb-4 mt-10;
   }
   .md-content h3,
   .md-content h4,
   .md-content h5 {
-    @apply font-semibold mb-3;
+    @apply font-semibold mb-3 mt-8;
   }
   .md-content h6 {
-    @apply font-medium mb-2;
+    @apply font-medium mb-2 mt-3;
   }
 
   .md-content h2,
@@ -80,8 +80,11 @@ export default {
   .md-content pre {
     @apply mb-6 rounded-lg;
   }
+  .md-content :not(pre) > code {
+    @apply px-1;
+  }
   .md-content pre > code {
-    @apply whitespace-pre-line;
+    @apply whitespace-pre;
   }
   .md-content p img {
     @apply block mx-auto rounded shadow-2xl mb-8;

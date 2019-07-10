@@ -17,9 +17,10 @@
     <div class="container mx-auto px-4 flex-1 h-full">
       <slot></slot>
     </div>
-    <footer class="bg-gray-100 shadow-inner print:hidden">
-        <p class="text-center py-2 px-8">
-          Ruman Saleem &copy; 2019. Made with <a class="link" href="https://gridsome.org">Gridsome</a>
+    <footer class="bg-white text-gray-500 text-xs mt-4 print:hidden">
+        <p class="text-center py-2 px-8 flex justify-between">
+          <span><b>Ruman Saleem</b> &copy; 2019</span> 
+          <span>built with <a class="link text-gray-600 font-semibold" href="https://gridsome.org">Gridsome</a>, hosted by GitHub Pages</span>
         </p>
     </footer>
   </div>

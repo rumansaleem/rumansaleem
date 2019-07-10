@@ -4,12 +4,20 @@
             :class="coverClasses"
             :style="coverBackground"
         >
-        <span v-if="!hasCover" v-text="project.title"></span>
+            <span v-if="!hasCover" v-text="project.title"></span>
         </div>
         <div class="-my-12 px-3">
             <div class="p-4 bg-white rounded shadow-lg">
-                <h3 class="text-lg mb-2"><a :href="project.path" v-text="project.title"></a></h3>
-                <p v-text="project.excerpt" class="text-sm mb-3 max-h-48"></p>
+                <h3 class="text-lg mb-2">
+                    <a target="__blank" :href="project.link || project.sourceCode" v-text="project.title"></a>
+                </h3>
+                <div v-html="project.content" class="text-sm mb-3"></div>
+                <div v-if="project.sourceCode" class="mt-2 text-sm mb-3">
+                    <a :href="project.sourceCode" class="inline-flex items-center">
+                        <svg-icon icon="zondicons.code" class="h-current mr-1"></svg-icon>
+                        <span class="link">Source Code</span>
+                    </a>
+                </div>
                 <div class="flex items-center text-xs italic mb-4">
                     <span>
                         <span v-text="project.start"></span>
@@ -26,7 +34,9 @@
     </article>
 </template>
 <script>
+import SvgIcon from './../components/SvgIcon';
 export default {
+    components: { SvgIcon },
     props: {
         project: {required: true}
     },

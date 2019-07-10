@@ -1,27 +1,32 @@
 <template>
     <Layout>
-        <h2 class="font-normal text-3xl mt-4 mb-6">Blog Posts</h2>
-        <h4 class="mb-4 font-medium text-lg" v-text="`${count} Post(s)`"></h4>
-        <article v-for="post in posts" :key="post.id" class="py-4 mb-4">
-            <h3 class="text-2xl mb-2"><a :href="post.path" v-text="post.title"></a></h3>
-            <p v-text="post.excerpt" class="mb-3"></p>
-            <div class="flex items-center text-sm italic">
-                <span>
-                    Posted - <span v-text="post.date"></span>
-                </span>
-                <span class="mx-3 w-1 h-1 rounded-full bg-gray-600"></span>
-                <span class="inline-flex items-center">
-                    <svg-icon icon="fontawesome.regular.clock" class="h-current text-gray-600 fill-current mr-1"></svg-icon>
-                    <span v-text="`${post.timeToRead} min read`"></span>
-                </span>
+        <div class="narrow-container mx-auto px-4">
+            <h2 class="font-normal text-3xl mt-4 mb-6">Blog Posts</h2>
+            <h4 class="mb-4 font-medium text-lg" v-text="`${count} Post(s)`"></h4>
+            <div v-if="posts.length > 0">
+                <article v-for="post in posts" :key="post.id" class="py-4 mb-4">
+                    <h3 class="text-2xl mb-2"><a :href="post.path" v-text="post.title"></a></h3>
+                    <p v-text="post.excerpt" class="mb-3"></p>
+                    <div class="flex items-center text-sm italic">
+                        <span v-text="post.date"></span>
+                        <span class="mx-3 w-1 h-1 rounded-full bg-gray-600"></span>
+                        <span class="inline-flex items-center">
+                            <svg-icon icon="fontawesome.regular.clock" class="h-current text-gray-600 fill-current mr-1"></svg-icon>
+                            <span v-text="`${post.timeToRead} min read`"></span>
+                        </span>
+                    </div>
+                </article>
+                <Pager :info="pageInfo"/>
             </div>
-        </article>
-        <Pager :info="pageInfo"/>
+            <p v-else>
+                I have not published anything yet. I'll soon publish some posts, stay tuned ;).
+            </p>
+        </div>
     </Layout>
 </template>
 <static-query>
 query Posts($page: Int){
-  allBlogPost(perPage: 2, page: $page) @paginate {
+  allBlogPost(page: $page, filter:{published: {eq:true}}) @paginate {
     totalCount
     pageInfo {
         totalPages
@@ -33,7 +38,7 @@ query Posts($page: Int){
         title
         excerpt
         timeToRead
-        date(format: "D MMM, YYYY")
+        date(format: "D MMMM YYYY")
         path
         slug
       }

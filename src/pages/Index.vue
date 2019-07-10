@@ -1,42 +1,40 @@
 <template>
   <Layout>
-    <div class="narrow-container mx-auto flex flex-col items-center py-4 mb-8">
+    <div v-if="about" class="narrow-container mx-auto flex flex-col items-center py-4 mb-8">
       <g-image class="h-64 mt-1 ml-3 mb-6 shadow-xl rounded-lg"
-        src="/images/ruman-saleem.jpg" 
-        alt="Ruman Saleem, standing with a bag on shoulder, background contains greenery of a lawn"></g-image>
-      <h2 class="text-3xl font-medium mb-2">Ruman Saleem</h2>
-      <h3 class="text-gray-800 uppercase font-normal mb-6">Web Developer</h3>
-      <ul class="flex justify-center items-center -mx-2 mb-6">
-        <li class="mx-2">
-          <a href="https://github.com/rumansaleem" class="text-gray-500 hover:text-black">
-            <svg-icon class="h-5 fill-current" icon="fontawesome.brands.github"></svg-icon>
-          </a>
-        </li>
-        <li class="mx-2">
-          <a href="https://www.linkedin.com/in/ruman-saleem-3947ba122/" class="text-gray-500 hover:text-blue-700">
-            <svg-icon class="h-5 fill-current" icon="fontawesome.brands.linkedin"></svg-icon>
-          </a>
-        </li>
-        <li class="mx-2">
-          <a href="https://twitter.com/zruman" class="text-gray-500 hover:text-blue-400">
-            <svg-icon class="h-5 fill-current" icon="fontawesome.brands.twitter"></svg-icon>
+        :src="about.image.src" 
+        :alt="`A portrait of ${about.name}`"></g-image>
+      <h2 class="text-3xl font-medium mb-1" v-text="about.name"></h2>
+      <h3 class="text-gray-600 uppercase font-semibold mb-6" v-text="about.title"></h3>
+      <ul class="flex justify-center items-center -mx-2 mb-6 text-lg">
+        <li v-for="link in about.links" :key="link.name" class="mx-2">
+          <a :href="link.target" :class="`text-gray-500 hover:text-${link.color}`">
+            <svg-icon class="h-current fill-current" :icon="link.icon"></svg-icon>
           </a>
         </li>
       </ul>
-      <div class="px-4 leading-normal">
-        <p class="mb-4">
-          Hi! I am Ruman Saleem. I am a fullstack web developer. 
-          Laravel + Vue is my preferred stack. Apart from Laravel and Vue, I know other tehnologies as well like - CodeIgniter, ExpressJS, NativeScript-Vue, React Native.
-          I am currently pursuing, masters degree in Computer Science at Delhi University.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde porro, voluptate nulla quod corrupti ab architecto nesciunt vitae dolor autem. Vel aperiam numquam vero. Tempora fugiat nemo harum temporibus corporis!
-        </p>
+      <div class="px-4 about-md-content leading-normal" v-html="about.content">
       </div>
     </div>
   </Layout>
 </template>
-
+<page-query>
+{
+  allAbout(limit: 1){
+    edges{
+      node{
+        name
+        title
+        image
+        links {
+          icon name target color
+        }
+        content
+      }
+    }
+  }
+}
+</page-query>
 <script>
 import SvgIcon from './../components/SvgIcon';
 export default {
@@ -44,11 +42,27 @@ export default {
     title: 'Home'
   },
   components: { SvgIcon },
+  computed: {
+    about() {
+      return this.$page.allAbout.edges[0].node;    
+    }
+  }
 }
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
+<style lang="postcss">
+  .about-md-content p:not(:last-child) {
+    @apply mb-4;
+  }
+  
+  .about-md-content code {
+    @apply whitespace-pre font-mono px-1 bg-gray-200;
+  }
+
+  .about-md-content a {
+    @apply text-teal-500;
+  }
+  .about-md-content a:hover {
+    @apply underline;
+  }
 </style>

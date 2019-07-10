@@ -22,6 +22,13 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
+        path: 'content/about/index.md',
+        typeName: 'About',
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
         path: 'content/blog/*/index.md',
         typeName: 'BlogPost',
         route: '/blog/:slug',

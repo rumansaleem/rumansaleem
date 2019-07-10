@@ -25,13 +25,13 @@ query Projects($page: Int){
         bgcolor
         fgcolor  
         cover
-        excerpt
-        timeToRead
+        content
         start(format: "MMM, YYYY")
         end(format: "MMM, YYYY")
-        path
-        slug
         technologies
+        link
+        sourceCode
+        snapshots
       }
     }
   }
