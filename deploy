@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+
+# abort on errors
+set -e
+# stash unstaged changes
+git stash
+
+
+# build
+npm run build
+
+# navigate into the build output directory
+cd dist
+
+# if you are deploying to a custom domain
+# echo 'rummansaleem.me' > CNAME
+
+git init
+git add -A
+git commit -m 'deploy'
+
+# if you are deploying to https://<USERNAME>.github.io
+git push -f git@github.com:rumansaleem/rumansaleem.github.io.git master
+
+# if you are deploying to https://<USERNAME>.github.io/<REPO>
+#  git push -f git@github.com:<USERNAME>/<REPO> master:gh-pages
+cd -
+
+git stash pop
