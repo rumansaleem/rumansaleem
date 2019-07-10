@@ -20,7 +20,7 @@ links:
     target: 'mailto:ruman63@gamil.com'
     color: teal-500
 ---
-Hello people! I'm Ruman Saleem ([@ruman_saleem](//twitter.com/ruman_saleem")), a full-stack web developer and a student, 
+Hello people! I'm Ruman Saleem ([@ruman_saleem](//twitter.com/ruman_saleem)), a full-stack web developer and a student, 
 pursuing _M.Sc. Computer Science_ from [Department of Computer Science, Delhi University](//cs.du.ac.in). 
 
 
