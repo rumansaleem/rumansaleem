@@ -5,7 +5,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
   
 module.exports = {
-  siteName: 'Rumman Saleem',
+  siteName: 'Ruman Saleem',
+  titleTemlate: '%s | Ruman Saleem',
 
   chainWebpack(config, { isServer }) {
     config.module.rules.delete('svg')
