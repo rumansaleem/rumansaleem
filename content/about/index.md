@@ -21,17 +21,17 @@ links:
     color: teal-500
 ---
 Hello people! I'm Ruman Saleem ([@ruman_saleem](//twitter.com/ruman_saleem)), a full-stack web developer and a student, 
-doing _M.Sc. Computer Science_ from [Department of Computer Science, Delhi University](//cs.du.ac.in). 
+doing _M.Sc. Computer Science_ from the [Department of Computer Science, Delhi University](//cs.du.ac.in). 
 
 
-I'm passionate about building websites. I love building beautiful user interface and working with new technologies and frameworks. 
-My favorite tech stack is Laravel, Vue and Tailwind CSS (awesome utility based CSS framework).
-I also work with Express.js and CodeIgniter. You might want to checkout my [work](/work).
+I'm passionate about building websites. I love building beautiful user interfaces and working with new technologies and frameworks. 
+My favorite tech stack is Laravel, Vue and Tailwind CSS (an awesome utility-first CSS framework).
+I also work with Express.js and CodeIgniter. You might want to check out my [work](/work).
 
 
 I occasionally write about my experiences and the new things I learn along the way of building websites.
-Checkout my [blog](/blog).
+Check out my [blog](/blog).
 
 
-I am currently looking for a full time job, and available for freelance projects (part-time). 
-Interested in hiring me? here's my [resume](/resume).
+I am currently looking for a full-time job, and available for freelance projects (part-time). 
+Here's my [resume](/resume), if you're interested in hiring me.
