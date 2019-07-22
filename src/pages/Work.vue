@@ -22,8 +22,6 @@ query Projects($page: Int){
       node{
         id
         title
-        bgcolor
-        fgcolor  
         cover
         content
         start(format: "MMM, YYYY")

@@ -1,8 +1,7 @@
 ---
 title: SIP Wealth
 slug: sip-wealth-static-site
-bgcolor: gray-900
-fgcolor: gray-100
+cover: ./sip-wealth-screenshot.png
 technologies: [ Laravel, Vue.js, Tailwind CSS ]
 start: 2017-12-15
 end: 2018-05-14

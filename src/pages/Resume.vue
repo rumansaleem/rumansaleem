@@ -62,10 +62,14 @@
                   <h4 class="text-gray-900" v-text="project.title"></h4>
                   <h5 class="text-sm font-medium" v-text="project.subtitle"></h5>
               </div>
-              <div class="flex-1 pl-4">
-                <ul class="list-disc">
+              <div class="flex-1">
+                <ul class="list-disc pl-4 mb-2">
                     <li v-for="(sentence, index) in project.details" :key="index" v-html="sentence" class="mb-1"></li>
                 </ul>
+                <p class="flex items-center font-normal mb-1" v-for="link in project.links" :key="link.target">
+                  <svg-icon :icon="link.icon" class="h-current mr-2"></svg-icon>
+                  <a :href="link.target" v-text="link.text"></a>
+                </p>
               </div>
           </div>
       </resume-section>

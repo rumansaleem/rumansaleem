@@ -5,12 +5,11 @@
     - Tailwind CSS
 
 - header: Languages
-  list: 
+  list:
     - PHP
     - JavaScript
     - Python
     - Java
-    - C++
 
 - header: Databases
   list:
@@ -28,7 +27,5 @@
 - header: Others
   list: 
     - AWS Lambda, EC2, etc
-    - Heroku
     - Linux
     - Vector Drawing - Inkscape
-    - UI Designing
