@@ -144,6 +144,6 @@ export default {
   .md-content blockquote > h4,
   .md-content blockquote > h5,
   .md-content blockquote > h6 {
-    @apply text-base mb-2 mt-0;
+    @apply text-sm uppercase font-bold text-teal-700 mb-2 mt-0;
   }
 </style>
