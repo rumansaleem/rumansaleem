@@ -26,10 +26,11 @@ Let's first figure out how can we use gradient on borders.
 ### Method 1: Use `border-image` CSS Property
 You can use `border-image-source` and `border-image-slice` CSS Property together to apply gradient on border. You can also combine those two using `border-image` shorthand property.
 
-```html
+```html output
 <style>
 .border-gradient {
     border: 5px solid transparent;
+    padding: .5rem;
     border-radius: 5px;
     border-image-source: linear-gradient(to right, red 0%, blue 100%); 
     border-image-slice: 1;
@@ -40,22 +41,9 @@ You can use `border-image-source` and `border-image-slice` CSS Property together
 }
 </style>
 <div class="border-gradient">
-    A div with gradient border.
+    A div with gradient border using border-image property.
 </div>
 ```
-<style>
-.border-gradient {
-    border: 5px solid transparent;
-    border-radius: 5px;
-    border-image-source: linear-gradient(to right, red 0%, blue 100%); 
-    border-image-slice: 1;
-}
-</style>
-<div class="bg-gray-200 rounded-lg mb-8 p-3">
-    <div class="border-gradient p-3 mx-auto" style="max-width:300px;">
-        A div with gradient border using border-image property.
-    </div>
-</div>
 
 Let's understand what's going on here. 
 
@@ -74,9 +62,10 @@ For more on `border-image-slice` property, see [MDN Docs](https://developer.mozi
 
 ### Method 2: Use `background-origin` with `background-image`
 
-```html
+```html output
 <style>
 .border-gradient-rounded {
+    padding: .5rem;
     border: 4px solid transparent;
     border-radius: 7px;
     background: linear-gradient(to right, white, white), linear-gradient(15deg, red , blue); 
@@ -88,21 +77,6 @@ For more on `border-image-slice` property, see [MDN Docs](https://developer.mozi
     A div with rounded border applied with gradient looks beautiful. 
 </div>
 ```
-<style>
-.border-gradient-rounded {
-    border: 4px solid transparent;
-    border-radius: 7px;
-    background: linear-gradient(to right, white, white), linear-gradient(15deg, red , blue); 
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
-}
-</style>
-<div class="bg-gray-200 rounded-lg mb-8 p-3">
-    <div class="mx-auto p-3 border-gradient-rounded" style="max-width: 300px;">
-        A div with rounded border applied with gradient looks beautiful.
-    </div>
-</div>
-
 
 Before we understand the what's going on here, its better you understand [`background-clip`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip) and [`background-origin`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip) CSS properties at MDN, if you're not familiar.
 
@@ -126,9 +100,10 @@ We are not done yet, still both the backgrounds overlap each other. To clip thes
 
 The `background-clip` property accepts `text` value which clips the background within foreground text. This can be used to apply the gradient to text.
 
-```html
+```html output
 <style>
  .text-gradient {
+    font-weight: bold;
     background: linear-gradient(to right, red, blue);
     background-clip: text;
     -webkit-background-clip: text;
@@ -136,43 +111,24 @@ The `background-clip` property accepts `text` value which clips the background w
     text-shadow: rgba(0, 0, 0, 0.2);
  }
 </style>
-<div class="text-gradient">
-text with css gradient
-</div>
+<span class="text-gradient">
+    Text with css gradient
+</span>
 ```
-
-<style>
- .text-gradient {
-    background: linear-gradient(to right, red, blue);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: rgba(0, 0, 0, 0.2);
- }
-</style>
-<p class="font-semibold mb-8 text-center p-3 bg-gray-200 rounded-lg">
-    <span class="text-gradient">Text with css gradient</span>
-</p>
 
 The `background-clip` property clips the linear gradient background to foreground text. But, gradient text is still not visible as it is exactly beneath the solid colored text. To reveal the gradient, we use `transparent` text color. 
 
 > ###### Note
 > 
-> The `background-clip: text` is experimental see [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip#Browser_compatibility)
+> The `background-clip: text;` is experimental see [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip#Browser_compatibility)
 
 Text and border gradients can be used to build attractive call to action buttons. Let's combine gradient borders with gradient text.
 
-```html
-<button class="border-gradient-rounded">
-    <span class="text-gradient"></span>
+```html output
+<button class="border-gradient-rounded px-3 py-2">
+    <span class="text-gradient">Awesome Button</span>
 </button>
 ```
-<div class="mb-8 p-3 text-center bg-gray-200 rounded-lg">
-    <button class="border-gradient-rounded px-3 py-2 font-bold">
-        <span class="text-gradient">Awesome Button</span>
-    </button>
-</div>
-
 That's all, folks! 
 I hope this post helped you learn something. 
 

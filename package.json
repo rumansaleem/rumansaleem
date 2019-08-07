@@ -16,10 +16,12 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@gridsome/remark-prismjs": "^0.1.0",
     "@gridsome/source-filesystem": "^0.5.0",
     "@gridsome/transformer-remark": "^0.3.2",
+    "escape-html": "^1.0.3",
+    "prismjs": "^1.17.1",
     "svg-to-vue-component": "^0.3.8",
+    "unist-util-visit": "^2.0.0",
     "webpack-bundle-analyzer": "^3.3.2"
   }
 }

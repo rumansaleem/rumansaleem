@@ -20,18 +20,49 @@ To be able to use the `html-loader` you would change your webpack configuration 
 
 ```html
 <template>
-    <component :is="iconComponent"></component>
+    <span v-html="icon"></span>
 </template>
 <script>
 export default {
     props: ['name'],
     data() {
         return {
-            iconComponent: null,
+            icon: '',
         }
     },
     created() {
-        import(`raw-loader!./../icons/${this.name}.svg`).then(
+        import(`html-loader!./../icons/${this.name}.svg`).then(
+            r => this.icon = r.default
+        );
+    },
+    mounted() {
+        console.log(this.iconComponent)      
+    }
+}
+</script>
+```
+ or an easier way is to tell webpack to use html loader and guess what it isnt not loading
+
+
+
+ ### Using `svg-to-vue-component`
+
+To be able to use the `html-loader` you would change your webpack configuration to use `html-loader` for all svg imports.
+
+```html
+<template>
+    <component :is="icon"></component>
+</template>
+<script>
+export default {
+    props: ['name'],
+    data() {
+        return {
+            iconComponent: '',
+        }
+    },
+    created() {
+        import(`svg-to-vue-component!./../icons/${this.name}.svg`).then(
             r => this.iconComponent = r.default
         );
     },
@@ -41,4 +72,4 @@ export default {
 }
 </script>
 ```
- or an easier way is to tell webpack to use html loader and guess what it isn not loading
+

@@ -12,7 +12,7 @@
             <span v-text="`${$page.post.timeToRead} min read`"></span>
         </span>
       </div>
-      <article class="md-content" v-html="$page.post.content">
+      <article class="md-content leading-snug" v-html="$page.post.content">
       </article>
 
     </div>
@@ -54,34 +54,35 @@ export default {
     break-after: auto;
     break-before: auto;
   }
-  .md-content p {
+
+  .md-content > p {
     @apply mb-3;
   }
-  .md-content h2 {
+  .md-content > h2 {
     @apply font-medium mb-4 mt-10;
   }
-  .md-content h3,
-  .md-content h4 {
+  .md-content > h3,
+  .md-content > h4 {
     @apply font-medium mb-3 mt-8;
   }
 
-  .md-content h5, 
-  .md-content h6 {
+  .md-content > h5, 
+  .md-content > h6 {
     @apply font-medium mb-2 mt-3;
   }
 
-  .md-content h2,
-  .md-content h1 {
+  .md-content > h2,
+  .md-content > h1 {
     @apply text-2xl;
   }
 
-  .md-content h3 {
+  .md-content > h3 {
     @apply text-xl;
   }
-  .md-content h4 {
+  .md-content > h4 {
     @apply text-lg;
   }
-  .md-content h6 {
+  .md-content > h6 {
     @apply text-sm;
   }
 
@@ -93,12 +94,31 @@ export default {
     @apply underline text-teal-600;
   }
 
-  .md-content pre {
-    @apply mb-6 rounded-lg;
+  .md-content > .code-with-output {
+    @apply my-8;
   }
+  .md-content > pre,
+  .md-content > .code-with-output > pre {
+    @apply mb-8 rounded-lg pt-8 relative;
+  }
+  .md-content > pre::after,
+  .md-content > .code-with-output > pre::after {
+    content: 'code';
+    @apply absolute font-sans text-gray-600 font-semibold uppercase text-xs top-0 left-0 mt-2 ml-4;
+  }
+  .md-content > .code-with-output > pre{
+    @apply mb-2;
+  }
+  .code-with-output > .html-code-output {
+    @apply relative bg-gray-200 p-4 pt-8 rounded;
+  }
+  .html-code-output::after {
+    content: 'preview';
+    @apply absolute text-gray-600 font-semibold uppercase text-xs top-0 left-0 mt-2 ml-4;
+  }
+
   .md-content :not(pre) > code {
-    @apply px-1;
-    color: inherit;
+    @apply px-1 border border-teal-500 text-teal-700 rounded;
   }
   .md-content pre > code {
     @apply whitespace-pre-wrap;
