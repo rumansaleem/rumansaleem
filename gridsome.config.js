@@ -1,9 +1,6 @@
 const isProduction = process.env.NODE_ENV === 'production';
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
-
-const purgecss = require('@fullhuman/postcss-purgecss')({
+const postCssPurgeCssPlugin = require('@fullhuman/postcss-purgecss')({
   content: [
     './src/**/*.html',
     './src/**/*.vue',
@@ -15,37 +12,16 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
 });
 
-const visit = require('unist-util-visit');
-const escapeHtml = require('escape-html');
-const Prism = require('prismjs');
-
-function highlight({ value, lang }, tag = 'pre') {
-  let code = Prism.languages.hasOwnProperty(lang)
-    ? Prism.highlight(value, Prism.languages[lang], lang)
-    : value
-
-  if (!lang) {
-    lang = 'text'
-    code = escapeHtml(code)
+const googleAnalyticsPlugin = {
+  use: '@gridsome/plugin-google-analytics',
+    options: {
+    id: 'UA-143625006-1'
   }
-
-  const className = `language-${lang}`
-  const codeTag = `<code class="${className}">${code}</code>`
-
-  return tag === 'pre'
-    ? `<pre class="${className}">${codeTag}</pre>`
-    : codeTag
-}
+};
 
 module.exports = {
   siteName: 'Ruman Saleem',
   titleTemlate: '%s | Ruman Saleem',
-
-  configureWebpack: {
-    plugins: [
-      new BundleAnalyzerPlugin(),
-    ],
-  },
   
   chainWebpack(config, { isServer }) {
 
@@ -61,12 +37,7 @@ module.exports = {
   },
   
   plugins: [
-    {
-      use: '@gridsome/plugin-google-analytics',
-      options: {
-        id: 'UA-143625006-1'
-      }
-    },
+    ...isProduction ? [googleAnalyticsPlugin] : [],
     {
       use: '@gridsome/source-filesystem',
       options: {
@@ -95,18 +66,7 @@ module.exports = {
     remark: {
       plugins: [
         'remark-attr',
-        (options) => {
-          return tree => {
-            visit(tree, 'code', (node) => {
-              let outputValue = (node.lang == 'html' && node.meta == 'output') ? 
-                `<div class="html-code-output">${node.value}</div>`: 
-                null;
-              let code = highlight(node);
-              node.type = 'html';
-              node.value = outputValue != null ? `<div class="code-with-output">${code} ${outputValue}</div>` : code;
-            });
-          };
-        }
+        require('./HighlightCodeAndRender')
       ]
     }
   },
@@ -118,7 +78,7 @@ module.exports = {
           require('tailwindcss')('./tailwind.config.js'),
           require('postcss-nested'),
           require('autoprefixer'),
-          ...isProduction ? [purgecss] : [],
+          ...isProduction ? [postCssPurgeCssPlugin] : [],
         ],
       },
     },
