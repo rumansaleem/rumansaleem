@@ -26,7 +26,7 @@
 </template>
 <static-query>
 query Posts($page: Int){
-  allBlogPost(page: $page, filter:{published: {eq:true}}) @paginate {
+  allBlogPost(page: $page) @paginate {
     totalCount
     pageInfo {
         totalPages

@@ -14,6 +14,7 @@
       </div>
       <article class="md-content" v-html="$page.post.content">
       </article>
+
     </div>
   </Layout>
 </template>
@@ -47,6 +48,12 @@ export default {
 }
 </script>
 <style lang="postcss">
+
+  .md-content > * {
+    break-inside: avoid;
+    break-after: auto;
+    break-before: auto;
+  }
   .md-content p {
     @apply mb-3;
   }
@@ -54,43 +61,61 @@ export default {
     @apply font-medium mb-4 mt-10;
   }
   .md-content h3,
-  .md-content h4,
-  .md-content h5 {
+  .md-content h4 {
     @apply font-medium mb-3 mt-8;
   }
+
+  .md-content h5, 
   .md-content h6 {
     @apply font-medium mb-2 mt-3;
   }
 
   .md-content h2,
   .md-content h1 {
-    @apply text-3xl;
+    @apply text-2xl;
   }
 
   .md-content h3 {
-    @apply text-2xl;
-  }
-  .md-content h4 {
     @apply text-xl;
   }
-  .md-content h5,
-  .md-content h6 {
+  .md-content h4 {
     @apply text-lg;
   }
+  .md-content h6 {
+    @apply text-sm;
+  }
+
+  .md-content a {
+    @apply text-teal-500;
+  }
+  .md-content a:hover,
+  .md-content a:focus {
+    @apply underline text-teal-600;
+  }
+
   .md-content pre {
     @apply mb-6 rounded-lg;
   }
   .md-content :not(pre) > code {
     @apply px-1;
+    color: inherit;
   }
   .md-content pre > code {
-    @apply whitespace-pre;
+    @apply whitespace-pre-wrap;
   }
   .md-content p img {
     @apply block mx-auto rounded shadow-2xl mb-8;
   }
+
+  .md-content ul {
+    @apply list-disc ml-4 pl-2;
+  }
+  .md-content ol {
+    @apply list-decimal ml-4 pl-2;
+  }
+
   .md-content blockquote {
-    @apply bg-gray-300 border-l-4 py-2 pr-2 pl-4 border-teal-600 rounded overflow-hidden mb-6;
+    @apply bg-gray-200 border-l-4 py-2 pr-2 pl-4 border-teal-600 rounded overflow-hidden my-6;
   }
   .md-content blockquote > p {
     @apply mb-0;
@@ -99,6 +124,6 @@ export default {
   .md-content blockquote > h4,
   .md-content blockquote > h5,
   .md-content blockquote > h6 {
-    @apply text-lg mb-2;
+    @apply text-base mb-2 mt-0;
   }
 </style>

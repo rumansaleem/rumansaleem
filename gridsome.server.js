@@ -4,11 +4,22 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+var inProduction = process.env.NODE_ENV === "production";
 
 module.exports = function (api) {
-  api.loadSource(({ addContentType }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api
-  })
+  api.loadSource(({getContentType}) => {
+    if (!inProduction) {
+      return null;
+    }
+    
+    const posts = getContentType('BlogPost');
+
+    posts.data().forEach(node => {
+      if (node.published !== true) {
+        posts.removeNode(node.id) // must remove by node id
+      }
+    });
+  }),
 
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api
