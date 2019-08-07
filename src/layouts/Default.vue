@@ -149,6 +149,10 @@ details summary::-webkit-details-marker {
   .print\:hidden {
     display: none;
   }
+
+  #app {
+    display: block;
+  }
 }
 
 </style>
