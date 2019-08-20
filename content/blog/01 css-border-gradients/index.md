@@ -15,7 +15,7 @@ If you have, you might also know that CSS gradients doesn't work on `color` prop
 
 But, what if you want to use gradient for text color, or use a colorful gradient for borders?
 
-That gets a little bit tricky with CSS. There are a couple of ways to ago about it, having their own advantages and disadvantages. 
+That gets a little bit tricky with CSS. There are a couple of ways to ago about it, having their own pros and cons. 
 
 Let's discuss these methods.
 
@@ -74,11 +74,11 @@ For more on `border-image-slice` property, see [MDN Docs](https://developer.mozi
 }
 </style>
 <div class="border-gradient-rounded">
-    A div with rounded border applied with gradient looks beautiful. 
+    A container with rounded corners and gradient borders. 
 </div>
 ```
 
-Before we understand the what's going on here, its better you understand [`background-clip`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip) and [`background-origin`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip) CSS properties at MDN, if you're not familiar.
+Before we understand the what's going on here, its better to first understand [`background-clip`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip) and [`background-origin`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip) CSS properties at MDN, if you're not familiar.
 
 Here, We are using two background images, one is the gradient that we intend to use for border, and the other one is a solid white color. 
 
@@ -92,13 +92,13 @@ We are not done yet, still both the backgrounds overlap each other. To clip thes
 
 ##### Pros
 * You can use rounded borders, works like a charm.
-  
+
 ##### Cons
-* You cannot have a transparent background, as our solid background over the gradient makes it look like border, as our solid background goes transparent, all we see is the gradient.
+* You cannot have a transparent background. You can mimic the transparent background by using the same color as of background, but this breaks down when your background is not a solid color.
 
 ## Text with CSS Gradient
 
-The `background-clip` property accepts `text` value which clips the background within foreground text. This can be used to apply the gradient to text.
+The `background-clip` property also accepts `text` value which clips the background within foreground text. This can be used to apply the gradient to text.
 
 ```html output
 <style>
@@ -116,11 +116,11 @@ The `background-clip` property accepts `text` value which clips the background w
 </span>
 ```
 
-The `background-clip` property clips the linear gradient background to foreground text. But, gradient text is still not visible as it is exactly beneath the solid colored text. To reveal the gradient, we use `transparent` text color. 
+The `background-clip` property clips the linear gradient background to foreground text. But, gradient text is still not visible as it is exactly beneath the solid colored text. To reveal the gradient, we use `transparent` text color and here we go, we get the gradient on text. 
 
 > ###### Note
 > 
-> The `background-clip: text;` is experimental see [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip#Browser_compatibility)
+> The `background-clip: text;` is experimental. See [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip#Browser_compatibility)
 
 Text and border gradients can be used to build attractive call to action buttons. Let's combine gradient borders with gradient text.
 
