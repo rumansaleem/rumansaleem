@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="narrow-container px-4 mx-auto">
+    <div class="narrow-container px-4 mx-auto mt-8">
       <h2 class="text-3xl font-medium text-center mb-2" v-text="$page.post.title"></h2>
       <div class="flex justify-center items-center text-sm italic mb-12">
         <span v-text="$page.post.date"></span>
@@ -127,7 +127,7 @@ export default {
     @apply px-1 text-gray-800 bg-gray-200 border rounded text-sm align-middle;
   }
   .md-content pre > code {
-    @apply whitespace-pre-wrap;
+    @apply overflow-x-auto;
   }
   .md-content > p img {
     @apply block mx-auto p-4 my-8;

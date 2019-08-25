@@ -71,7 +71,9 @@ For more on `border-image-slice` property, see [MDN Docs](https://developer.mozi
     padding: .5rem;
     border: 4px solid transparent;
     border-radius: 7px;
-    background: linear-gradient(to right, white, white), linear-gradient(15deg, red , blue); 
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(15deg, red , blue); 
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
 }
