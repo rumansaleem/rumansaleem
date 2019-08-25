@@ -35,9 +35,8 @@ query {
 </static-query>
 
 <script>
-
 import SvgIcon from './../components/SvgIcon';
-import 'prismjs/themes/prism.css'
+
 export default {
   components: {SvgIcon},
   computed: {

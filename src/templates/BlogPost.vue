@@ -34,6 +34,7 @@ query blogPost ($id: String!) {
 <script>
 import Layout from '~/layouts/Default.vue';
 import SvgIcon from '~/components/SvgIcon.vue';
+
 export default {
   components: {
     Layout,
@@ -44,6 +45,9 @@ export default {
       title: this.$page.post.title,
       meta: [
         { name: 'keywords', content: this.$page.post.tags.join(' ') }
+      ],
+      link: [
+        {rel: 'stylesheet', href: '/css/prism.css'}
       ]
     }
   }
