@@ -3,9 +3,7 @@
     <div class="narrow-container px-4 mx-auto">
       <h2 class="text-3xl font-medium text-center mb-2" v-text="$page.post.title"></h2>
       <div class="flex justify-center items-center text-sm italic mb-12">
-        <span>
-            Posted - <span v-text="$page.post.date"></span>
-        </span>
+        <span v-text="$page.post.date"></span>
         <span class="mx-3 w-1 h-1 rounded-full bg-gray-600"></span>
         <span class="inline-flex items-center">
             <svg-icon icon="fontawesome.regular.clock" class="h-current text-gray-900 fill-current mr-1"></svg-icon>
@@ -26,8 +24,9 @@ query blogPost ($id: String!) {
     title
     excerpt
     timeToRead
-    date(format: "D MMM, YYYY")
+    date(format: "MMMM D, YYYY")
     content
+    tags
   }
 }
 </page-query>
@@ -42,7 +41,10 @@ export default {
   },
   metaInfo () {
     return {
-      title: this.$page.post.title
+      title: this.$page.post.title,
+      meta: [
+        { name: 'keywords', content: this.$page.post.tags.join(' ') }
+      ]
     }
   }
 }
@@ -118,17 +120,29 @@ export default {
   }
 
   .md-content :not(pre) > code {
-    @apply px-1 border border-teal-500 text-teal-700 rounded;
+    @apply px-1 text-gray-800 bg-gray-200 border rounded text-sm align-middle;
   }
   .md-content pre > code {
     @apply whitespace-pre-wrap;
   }
-  .md-content p img {
-    @apply block mx-auto rounded shadow-2xl mb-8;
+  .md-content > p img {
+    @apply block mx-auto p-4 my-8;
+  }
+
+  .md-content > .figure-with-caption {
+    @apply my-8;
+  }
+
+  .md-content > .figure-with-caption img{
+    @apply block mx-auto p-4;
+  }
+  
+  .md-content > .figure-with-caption .caption {
+    @apply text-center text-gray-600 italic;
   }
 
   .md-content ul {
-    @apply list-disc ml-4 pl-2;
+    @apply list-disc ml-4 pl-2 mb-3;
   }
   .md-content ol {
     @apply list-decimal ml-4 pl-2;

@@ -66,7 +66,8 @@ module.exports = {
     remark: {
       plugins: [
         'remark-attr',
-        require('./HighlightCodeAndRender')
+        require('./HighlightCodeAndRender'),
+        require('./ImageToFigureCaption')
       ]
     }
   },
