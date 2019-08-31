@@ -6,7 +6,7 @@
                 Whoops! looks like you lost the track. Let me guide you to home.
             </p>
             <p>
-                <g-link to="/" class="inline-block px-4 py-2 bg-white border-2 border-teal-500 rounded text-teal-500 font-medium">Go to Home</g-link>
+                <g-link to="/" class="inline-block px-4 py-2 bg-white border-2 border-teal-500 rounded text-teal-500 font-semibold">Go to Home</g-link>
             </p>
         </div>
     </Layout>

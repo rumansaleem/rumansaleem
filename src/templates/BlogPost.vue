@@ -1,15 +1,16 @@
 <template>
   <Layout>
     <div class="narrow-container px-4 mx-auto mt-8">
-      <h2 class="text-3xl font-medium text-center mb-2" v-text="$page.post.title"></h2>
-      <div class="flex justify-center items-center text-sm italic mb-12">
+      <div class="flex items-center italic font-bold text-gray-700 mb-2">
         <span v-text="$page.post.date"></span>
-        <span class="mx-3 w-1 h-1 rounded-full bg-gray-600"></span>
+        <span class="mx-3 text-gray-600">&bull;</span>
         <span class="inline-flex items-center">
             <svg-icon icon="fontawesome.regular.clock" class="h-current text-gray-900 fill-current mr-1"></svg-icon>
             <span v-text="`${$page.post.timeToRead} min read`"></span>
         </span>
       </div>
+      <h2 class="text-3xl font-extrabold mb-2" v-text="$page.post.title"></h2>
+      <hr class="border-b-2 border-gray-800 ml-0 mb-10">
       <article class="md-content leading-snug" v-html="$page.post.content">
       </article>
 
@@ -47,7 +48,8 @@ export default {
         { name: 'keywords', content: this.$page.post.tags.join(' ') }
       ],
       link: [
-        {rel: 'stylesheet', href: '/css/prism.css'}
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Fira+Mono"},
+        { rel: 'stylesheet', href: '/css/prism.css' }
       ]
     }
   }
@@ -55,26 +57,33 @@ export default {
 </script>
 <style lang="postcss">
 
-  .md-content > * {
+  .md-content > pre,
+  .md-content > figure,
+  .md-content > blockquote {
     break-inside: avoid;
-    break-after: auto;
-    break-before: auto;
+    page-break-inside: avoid;
   }
 
   .md-content > p {
     @apply mb-3;
   }
   .md-content > h2 {
-    @apply font-medium mb-4 mt-10;
+    break-after: avoid;
+    page-break-after: avoid;
+    @apply font-sans font-extrabold mb-4 mt-10;
   }
   .md-content > h3,
   .md-content > h4 {
-    @apply font-medium mb-3 mt-8;
+    break-after: avoid;
+    page-break-after: avoid;
+    @apply font-sans font-bold mb-3 mt-8;
   }
 
   .md-content > h5, 
   .md-content > h6 {
-    @apply font-medium mb-2 mt-3;
+    break-after: avoid;
+    page-break-after: avoid;
+    @apply font-sans font-bold mb-2 mt-3;
   }
 
   .md-content > h2,
@@ -105,7 +114,7 @@ export default {
   }
   .md-content > pre,
   .md-content > .code-with-output > pre {
-    @apply mb-8 rounded-lg pt-8 relative;
+    @apply mb-8 rounded-lg pt-8 relative font-mono;
   }
   .md-content > pre::after,
   .md-content > .code-with-output > pre::after {
@@ -116,7 +125,7 @@ export default {
     @apply mb-2;
   }
   .code-with-output > .html-code-output {
-    @apply relative bg-gray-200 p-4 pt-8 rounded;
+    @apply relative font-sans bg-gray-200 p-4 pt-8 rounded;
   }
   .html-code-output::after {
     content: 'preview';
@@ -124,8 +133,10 @@ export default {
   }
 
   .md-content :not(pre) > code {
-    @apply px-1 text-gray-800 bg-gray-200 border rounded text-sm align-middle;
+    font-size: .85em;
+    @apply px-1 text-gray-800 bg-gray-200 border rounded font-normal align-middle font-mono;
   }
+  
   .md-content pre > code {
     @apply overflow-x-auto;
   }

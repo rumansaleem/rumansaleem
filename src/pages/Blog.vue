@@ -1,13 +1,11 @@
 <template>
     <Layout>
         <div class="narrow-container mx-auto px-4">
-            <h2 class="font-normal text-3xl mt-4 mb-6">Blog Posts</h2>
-            <h4 class="mb-4 font-medium text-lg" v-text="`${count} Post(s)`"></h4>
+            <h2 class="font-extrabold text-3xl mt-4 mb-3">Blog Posts</h2>
+            <h4 class="mb-6 font-semibold text-lg" v-text="`${count} Post${count > 1 ? 's' : ''}`"></h4>
             <div v-if="posts.length > 0">
                 <article v-for="post in posts" :key="post.id" class="py-4 mb-4">
-                    <h3 class="text-2xl mb-2"><a :href="post.path" v-text="post.title"></a></h3>
-                    <p v-text="post.excerpt" class="mb-3"></p>
-                    <div class="flex items-center text-sm italic">
+                    <div class="flex items-center text-sm font-bold text-gray-700 mb-2">
                         <span v-text="post.date"></span>
                         <span class="mx-3 w-1 h-1 rounded-full bg-gray-600"></span>
                         <span class="inline-flex items-center">
@@ -15,6 +13,11 @@
                             <span v-text="`${post.timeToRead} min read`"></span>
                         </span>
                     </div>
+                    <h3 class="font-bold text-2xl mb-2"><a :href="post.path" v-text="post.title"></a></h3>
+                    <p v-text="post.excerpt" class="mb-3"></p>
+                    <p>
+                        <a class="link" :href="post.path">Read More »</a>
+                    </p>
                 </article>
                 <Pager :info="pageInfo"/>
             </div>

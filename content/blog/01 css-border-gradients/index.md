@@ -1,7 +1,7 @@
 ---
 title: Gradient Borders with CSS
 slug: gradient-borders-with-css
-excerpt: Wanted to make your site look more colorful with CSS gradients? But, using gradients on the border is a little bit tricky with CSS. Let's wrap our heads around the tricky methods to make CSS gradients work on the border.
+excerpt: You might be familiar with the usage of gradients as `background-image` or `background` shorthand property in CSS. But, have you ever tried using gradients as text color or border color? 
 published: true
 author: Ruman Saleem
 date: 2019-08-25

@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <h2 class="font-normal text-3xl mt-4 mb-4">Work</h2>
+        <h2 class="font-extrabold text-3xl mt-4 mb-10">Work</h2>
         <div class="flex flex-wrap -mx-4 -mt-6">
             <PortfolioCard v-for="project in projects" 
                 :key="project.id" 

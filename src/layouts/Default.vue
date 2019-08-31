@@ -1,11 +1,11 @@
 <template>
-  <div id="app" class="min-h-screen flex flex-col font-sans text-gray-900 leading-tight">
-    <div class="py-2 sm:py-4 print:hidden">
+  <div id="app" class="min-h-screen flex flex-col text-gray-900 leading-tight">
+    <div class="py-2 sm:py-4 font-sans print:hidden text-gray-800">
       <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
         <g-link to="/" class="inline-flex items-center text-xl text-teal-500 mb-2 sm:mb-0">
           <svg-icon icon="ruman-saleem-logo" class="logo h-12 mr-2"></svg-icon>
-          <span class="text-gray-900 whitespace-no-wrap">Ruman</span>
-          <span class="text-teal-500 font-medium ml-1">Saleem</span>
+          <span class="text-gray-800 font-semibold whitespace-no-wrap">Ruman</span>
+          <span class="text-teal-500 font-bold ml-1">Saleem</span>
         </g-link>
         <nav class="flex items-center -mx-2">
           <g-link class="nav-link" to="/work">Work</g-link>
@@ -20,7 +20,7 @@
     <footer class="bg-white text-gray-500 text-xs mt-4 print:hidden">
         <p class="text-center py-2 px-8 flex justify-between">
           <span><b>Ruman Saleem</b> &copy; 2019</span> 
-          <span>built with <a class="link text-gray-600 font-medium" href="https://gridsome.org">Gridsome</a>, hosted by GitHub Pages</span>
+          <span>built with <a class="link text-gray-600 font-semibold" href="https://gridsome.org">Gridsome</a>, hosted by GitHub Pages</span>
         </p>
     </footer>
   </div>
@@ -38,6 +38,14 @@ query {
 import SvgIcon from './../components/SvgIcon';
 
 export default {
+  metaInfo() {
+    return {
+      link: [
+        { prefetch: 'true', rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap"},
+        { prefetch: 'true', rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Muli:300,400,400i,700&display=swap"}
+      ]
+    }
+  },
   components: {SvgIcon},
   computed: {
     routeComponents() {
@@ -68,20 +76,21 @@ export default {
 </script>
 
 <style lang="postcss">
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap');
-
 html, body {
-  font-size: calc(13px + 0.25vw);
-}
-
-.smaller {
-  font-size: calc(11px + 0.25vw);
+  font-size: calc(14px + 0.25vw);
+  @apply font-content;
 }
 
 @tailwind base;
+h1, h2, h3, h4, h5, h6 {
+  @apply font-sans;
+}
 
-h1, h2, h3, h4 {
-  @apply font-medium;
+h1, h2 {
+  @apply font-extrabold;
+}
+h3, h4 {
+  @apply font-bold;
 }
 
 @page {
@@ -102,7 +111,7 @@ details summary::-webkit-details-marker {
 }
 
 .nav-link {
-  @apply mx-2 py-1 px-1 font-medium uppercase text-sm tracking-wide relative leading-snug;
+  @apply mx-2 py-1 px-1 font-bold uppercase text-sm tracking-wider relative leading-snug;
 }
 .nav-link::after {
   content: '';
@@ -143,6 +152,16 @@ details summary::-webkit-details-marker {
 }
 
 @tailwind utilities;
+
+.no-break-inside {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.no-break-after {
+  break-after: avoid;
+  page-break-after: avoid;
+}
 
 @media print {
   .print\:hidden {

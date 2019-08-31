@@ -2,7 +2,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Ubuntu', 'sans-serif']
+        sans: ['Open Sans', 'Droid Sans', 'sans-serif'],
+        content: ['Muli', 'sans-serif'],
+        mono: ['Fira Mono', 'monospace']
       },
       fontWeight: {
         medium: 500,
@@ -18,6 +20,9 @@ module.exports = {
       minWidth: {
         '80': '20rem',
       },
+      screens: {
+        'print': {raw: 'print'}
+      }
     }
   },
   variants: {},
