@@ -1,8 +1,8 @@
 <template>
     <Layout class="bg-white">
-    <div ref="resume" class="resume-wrapper bg-white text-gray-900 leading-tight mt-8 print:mt-0">
+    <div ref="resume" class="resume-wrapper narrow-container mx-auto bg-white text-gray-900 leading-tight mt-8 print:mt-0">
       <div class="personal-area">
-          <h1 class=" text-3xl" v-text="main.title"></h1>
+          <h1 class="text-3xl" v-text="main.title"></h1>
           <h3 class="uppercase text-gray-600 mb-3" v-text="main.subtitle"></h3>
           <ul class="">
               <li class="py-1 flex items-center" v-for="link in main.links" :key="link.target">
@@ -11,7 +11,7 @@
               </li>
           </ul>
       </div>
-      <resume-section class="education-area ">
+      <resume-section class="education-area">
         <template slot="header">Education</template>
         <div v-for="education in educations" class="mb-4" :key="education.title">
             <div class="font-semibold text-gray-700 mb-1">
@@ -36,15 +36,15 @@
             </ul>
           </div>
       </resume-section>
-      <resume-section class="experience-area ">
+      <resume-section class="experience-area">
           <template slot="header">Work Experience</template>
-          <div class="lg:flex print:block mb-6 lg:mb-3 print:mb-6 no-break-inside" v-for="work in works" :key="work.title">
-              <div class="w-full lg:w-48 print:w-full font-semibold text-gray-700 mb-2 lg:mb-0 lg:pr-4 print:pr-0 print:mb-2">
+          <div class="mb-6 no-break-inside" v-for="work in works" :key="work.title">
+              <div class="w-full font-semibold text-gray-700 mb-2">
                   <h4 class="text-gray-900" v-text="work.title"></h4>
                   <h5 class="text-sm font-semibold" v-text="work.subtitle"></h5>
                   <p class="text-gray-600 text-sm font-semibold" v-text="work.timeline"></p>
               </div>
-              <div class="lg:ml-4 print:ml-0 flex-1">
+              <div class="flex-1">
                 <ul class="list-disc pl-4">
                     <li v-for="(sentence, index) in work.details" :key="index" v-html="sentence" class="mb-1"></li>
                 </ul>
@@ -55,10 +55,10 @@
               </div>
           </div>
       </resume-section>
-      <resume-section class="projects-area ">
+      <resume-section class="projects-area">
           <template slot="header">Projects</template>
-          <div class="lg:flex print:block mb-6 lg:mb-3 print:mb-6 no-break-inside" v-for="project in projects" :key="project.title">
-              <div class="w-full lg:w-48 print:w-full font-semibold text-gray-700 mb-2 lg:mb-0 lg:pr-4 print:pr-0 print:mb-2">
+          <div class="mb-6 no-break-inside" v-for="project in projects" :key="project.title">
+              <div class="w-full font-semibold text-gray-700 mb-2">
                   <h4 class="text-gray-900" v-text="project.title"></h4>
                   <h5 class="text-sm font-semibold" v-text="project.subtitle"></h5>
               </div>
@@ -68,15 +68,15 @@
                 </ul>
                 <p class="flex items-center font-normal mb-1" v-for="link in project.links" :key="link.target">
                   <svg-icon :icon="link.icon" class="h-current mr-2"></svg-icon>
-                  <a :href="link.target" v-text="link.text"></a>
+                  <a :href="link.target" v-text="link.text" class="hover:underline"></a>
                 </p>
               </div>
           </div>
       </resume-section>
-      <resume-section class="hackathons-area ">
+      <resume-section class="hackathons-area">
           <template slot="header">Hackathons</template>
-          <div v-for="hackathon in hackathons" class="lg:flex mb-6 lg:mb-3 print:mb-6 print:block no-break-inside" :key="hackathon.title">
-              <div class="w-full lg:w-48 print:w-full font-semibold text-gray-700 mb-2 lg:mb-0 lg:pr-4 print:pr-0 print:mb-2">
+          <div v-for="hackathon in hackathons" class="mb-6 no-break-inside" :key="hackathon.title">
+              <div class="w-full font-semibold text-gray-700 mb-2">
                   <h4 class="text-gray-900" v-text="hackathon.title"></h4>
                   <p class="text-sm font-semibold" v-text="hackathon.subtitle"></p>
               </div>
@@ -156,21 +156,10 @@ summary {
       'education experience'
       'skills projects'
       'hackathons projects';
-    grid-template-columns: 20rem 1fr;
+    grid-template-columns: 18rem 1fr;
     grid-column-gap: 1.5rem;
     grid-row-gap: .75rem;
     grid-template-rows: repeat(4, auto);
-  }
-}
-@screen lg {
-  .resume-wrapper {
-    grid-template-areas:
-      'main experience'
-      'education experience'
-      'education projects'
-      'skills projects'
-      'skills hackathons';
-    grid-template-rows: repeat(3, auto) repeat(2, minmax(auto, 16rem));
   }
 }
 @media print {
