@@ -7,9 +7,9 @@
       <h2 class="text-3xl font-sans font-bold mb-1" v-text="about.name"></h2>
       <h3 class="text-gray-600 uppercase font-sans font-semibold mb-6" v-text="about.title"></h3>
       <ul class="flex justify-center items-center -mx-2 mb-6 text-lg">
-        <li v-for="link in about.links" :key="link.name" class="mx-2">
-          <a :href="link.target" :class="`text-gray-500 hover:text-${link.color}`">
-            <svg-icon class="h-current fill-current" :icon="link.icon"></svg-icon>
+        <li v-for="link in about.links" :key="link.alt" class="mx-2">
+          <a :href="link.target" :class="`text-gray-500 hover:text-${link.color}`" :title="link.alt">
+            <feather-icon class="h-current" :name="link.icon"></feather-icon>
           </a>
         </li>
       </ul>
@@ -27,7 +27,7 @@
         title
         image
         links {
-          icon name target color
+          icon alt target color
         }
         content
       }
@@ -36,12 +36,12 @@
 }
 </page-query>
 <script>
-import SvgIcon from './../components/SvgIcon';
+import FeatherIcon from './../components/FeatherIcon';
 export default {
   metaInfo: {
     title: 'Home'
   },
-  components: { SvgIcon },
+  components: { FeatherIcon },
   computed: {
     about() {
       return this.$page.allAbout.edges[0].node;    

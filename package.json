@@ -19,6 +19,7 @@
     "@gridsome/source-filesystem": "^0.5.0",
     "@gridsome/transformer-remark": "^0.3.2",
     "escape-html": "^1.0.3",
+    "feather-icons": "^4.24.1",
     "prismjs": "^1.17.1",
     "svg-to-vue-component": "^0.3.8",
     "unist-util-visit": "^2.0.0",

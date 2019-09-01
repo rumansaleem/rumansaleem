@@ -2,17 +2,17 @@ title: Ruman Saleem
 subtitle: Web Developer
 links:
   - target: https://github.com/rumansaleem
-    icon: fontawesome.brands.github
+    icon: github
     text: github.com/rumansaleem
 
   - target: https://rumansaleem.github.io
-    icon: zondicons.network
+    icon: globe
     text: rumansaleem.github.io
 
   - target: mailto:ruman.mcs18.du@gmail.com
-    icon: fontawesome.solid.at
+    icon: at-sign
     text: ruman.mcs18.du@gmail.com
     
   - target: mailto:+918510052301
-    icon: fontawesome.solid.phone-alt
+    icon: phone
     text: +91-8510052301

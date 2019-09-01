@@ -6,7 +6,7 @@
           <h3 class="uppercase text-gray-600 mb-3" v-text="main.subtitle"></h3>
           <ul class="">
               <li class="py-1 flex items-center" v-for="link in main.links" :key="link.target">
-                  <svg-icon :icon="link.icon" class="h-current mr-2"></svg-icon>
+                  <feather-icon :name="link.icon" class="h-current mr-2"></feather-icon>
                   <a class="hover:underline" :href="link.target" v-text="link.text"></a>
               </li>
           </ul>
@@ -49,7 +49,7 @@
                     <li v-for="(sentence, index) in work.details" :key="index" v-html="sentence" class="mb-1"></li>
                 </ul>
                 <p v-if="work.link" class="flex items-center font-normal text-gray-900">
-                  <svg-icon class="h-current mr-2" :icon="work.link.icon"></svg-icon>
+                  <feather-icon class="h-current mr-2" :name="work.link.icon"></feather-icon>
                   <a  class="hover:underline" :href="work.link.target" v-text="work.link.text"></a>
                 </p>
               </div>
@@ -67,7 +67,7 @@
                     <li v-for="(sentence, index) in project.details" :key="index" v-html="sentence" class="mb-1"></li>
                 </ul>
                 <p class="flex items-center font-normal mb-1" v-for="link in project.links" :key="link.target">
-                  <svg-icon :icon="link.icon" class="h-current mr-2"></svg-icon>
+                  <feather-icon :name="link.icon" class="h-current mr-2"></feather-icon>
                   <a :href="link.target" v-text="link.text" class="hover:underline"></a>
                 </p>
               </div>
@@ -86,14 +86,14 @@
           </div>
       </resume-section>
     </div>
-    <button @click="print" class="fixed bottom-0 right-0 mb-6 mr-6 bg-teal-500 w-12 h-12 rounded-full flex items-center justify-center shadow-md print:hidden">
-        <svg-icon icon="fontawesome.solid.print" class="w-4 h-4 fill-current text-white"></svg-icon>
+    <button @click="print" class="fixed bottom-0 right-0 mb-6 mr-6 bg-teal-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md print:hidden">
+        <feather-icon name="printer" class="w-4 h-4" :strokeWidth="2.5"></feather-icon>
     </button>
     </Layout>
 </template>
 <script>
 import ResumeSection from '../layouts/ResumeSection';
-import SvgIcon from '../components/SvgIcon';
+import FeatherIcon from '../components/FeatherIcon';
 import main from '../../content/resume/main.yaml';
 import skills from '../../content/resume/skills.yaml';
 import projects from '../../content/resume/projects.yaml';
@@ -111,7 +111,7 @@ export default {
       class: 'smaller'
     },
   },
-  components: { ResumeSection, SvgIcon },
+  components: { ResumeSection, FeatherIcon },
   data() {
     return {
       main, skills, projects, educations, hackathons, experience

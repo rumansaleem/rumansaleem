@@ -3,7 +3,7 @@
     <div class="py-2 sm:py-4 font-sans print:hidden text-gray-800">
       <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
         <g-link to="/" class="inline-flex items-center text-xl text-teal-500 mb-2 sm:mb-0">
-          <svg-icon icon="ruman-saleem-logo" class="logo h-12 mr-2"></svg-icon>
+          <site-logo class="logo h-12 mr-2"></site-logo>
           <span class="text-gray-800 font-semibold whitespace-no-wrap">Ruman</span>
           <span class="text-teal-500 font-bold ml-1">Saleem</span>
         </g-link>
@@ -35,7 +35,7 @@ query {
 </static-query>
 
 <script>
-import SvgIcon from './../components/SvgIcon';
+import SiteLogo from './../icons/ruman-saleem-logo.svg';
 
 export default {
   metaInfo() {
@@ -46,7 +46,7 @@ export default {
       ]
     }
   },
-  components: {SvgIcon},
+  components: { SiteLogo },
   computed: {
     routeComponents() {
       return this.$route.path.split('/').map(url => url)

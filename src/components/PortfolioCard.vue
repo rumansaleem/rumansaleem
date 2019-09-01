@@ -14,7 +14,7 @@
                 <div v-html="project.content" class="text-sm mb-3"></div>
                 <div v-if="project.sourceCode" class="mt-2 text-sm mb-3">
                     <a :href="project.sourceCode" class="inline-flex items-center">
-                        <svg-icon icon="zondicons.code" class="h-current mr-1"></svg-icon>
+                        <feather-icon name="code" class="h-current mr-1"></feather-icon>
                         <span class="link">Source Code</span>
                     </a>
                 </div>
@@ -34,9 +34,9 @@
     </article>
 </template>
 <script>
-import SvgIcon from './../components/SvgIcon';
+import FeatherIcon from './../components/FeatherIcon';
 export default {
-    components: { SvgIcon },
+    components: { FeatherIcon },
     props: {
         project: {required: true}
     },

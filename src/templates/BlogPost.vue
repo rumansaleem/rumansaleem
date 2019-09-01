@@ -1,16 +1,16 @@
 <template>
   <Layout>
     <div class="narrow-container px-4 mx-auto mt-8">
-      <div class="flex items-center italic font-bold text-gray-700 mb-2">
+      <div class="flex items-center text-sm font-bold text-gray-700 mb-2">
         <span v-text="$page.post.date"></span>
         <span class="mx-3 text-gray-600">&bull;</span>
         <span class="inline-flex items-center">
-            <svg-icon icon="fontawesome.regular.clock" class="h-current text-gray-900 fill-current mr-1"></svg-icon>
+            <feather-icon name="clock" class="h-current text-gray-900 mr-1"></feather-icon>
             <span v-text="`${$page.post.timeToRead} min read`"></span>
         </span>
       </div>
       <h2 class="text-3xl font-extrabold mb-2" v-text="$page.post.title"></h2>
-      <hr class="border-b-2 border-gray-800 ml-0 mb-10">
+      <hr class="md:border-b-2 border-gray-800 ml-0 mb-10">
       <article class="md-content leading-snug" v-html="$page.post.content">
       </article>
 
@@ -34,12 +34,12 @@ query blogPost ($id: String!) {
 
 <script>
 import Layout from '~/layouts/Default.vue';
-import SvgIcon from '~/components/SvgIcon.vue';
+import FeatherIcon from '~/components/FeatherIcon.vue';
 
 export default {
   components: {
     Layout,
-    SvgIcon
+    FeatherIcon
   },
   metaInfo () {
     return {

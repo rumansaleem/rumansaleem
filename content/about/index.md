@@ -3,20 +3,20 @@ name: Ruman Saleem
 title: Web Developer
 image: ./ruman-saleem.jpg
 links:
-  - icon: fontawesome.brands.github
-    name: GitHub
+  - icon: github
+    alt: GitHub
     target: https://github.com/rumansaleem/
     color: black
-  - icon: fontawesome.brands.linkedin
-    name: LinkedIn
+  - icon: linkedin
+    alt: LinkedIn
     target: https://www.linkedin.com/in/ruman-saleem-3947ba122/
     color: blue-700
-  - icon: fontawesome.brands.twitter
-    name: Twitter
+  - icon: twitter
+    alt: Twitter
     target: https://twitter.com/ruman_saleem
     color: blue-400
-  - icon: zondicons.envelope
-    name: Email
+  - icon: mail
+    alt: Email
     target: 'mailto:ruman63@gamil.com'
     color: teal-500
 ---

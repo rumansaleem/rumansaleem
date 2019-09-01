@@ -9,7 +9,7 @@
                         <span v-text="post.date"></span>
                         <span class="mx-3 w-1 h-1 rounded-full bg-gray-600"></span>
                         <span class="inline-flex items-center">
-                            <svg-icon icon="fontawesome.regular.clock" class="h-current text-gray-600 fill-current mr-1"></svg-icon>
+                            <feather-icon name="clock" class="h-current text-gray-600 mr-1"></feather-icon>
                             <span v-text="`${post.timeToRead} min read`"></span>
                         </span>
                     </div>
@@ -52,7 +52,7 @@ query Posts($page: Int){
 
 <script>
 import Layout from './../layouts/Default';
-import SvgIcon from './../components/SvgIcon';
+import FeatherIcon from './../components/FeatherIcon';
 import { Pager } from 'gridsome';
 export default {
     metaInfo() {
@@ -60,7 +60,7 @@ export default {
             title: 'Blog'
         }
     },
-    components: { Layout, Pager, SvgIcon },
+    components: { Layout, Pager, FeatherIcon },
     computed: {
         posts() {
             return this.$static.allBlogPost.edges.map(edge => edge.node);

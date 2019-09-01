@@ -3,11 +3,11 @@
   timeline: February 2018 - July 2018
   show: true
   link: 
-    icon: zondicons.link
+    icon: link-2
     target: https://sipwealth.co.in
     text: sipwealth.co.in
   source:
-    icon: github
+    icon: code
     target: https://github.com/rumansaleem/sip-portal
     text: github.com/rumansaleem/sip-portal
   details:
@@ -21,7 +21,7 @@
   timeline: June 2017 - July 2017
   show: true
   link:
-    icon: zondicons.link
+    icon: link-2
     target: https://thepuremedia.com
     text: thepuremedia.com
   details:

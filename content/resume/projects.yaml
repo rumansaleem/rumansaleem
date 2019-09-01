@@ -1,10 +1,10 @@
 - title: Sankalan Portal
   subtitle: Laravel, Vue.js, Tailwind CSS
   links:
-    - icon: fontawesome.brands.github
+    - icon: code
       target: https://github.com/csdu/sankalan-portal
       text: github.com/csdu/sankalan-portal
-    - icon: zondicons.link
+    - icon: link-2
       target: https://sankalan-demo.herokuapp.com
       text: sankalan-demo.herokuapp.com
 
@@ -17,10 +17,10 @@
 - title: Buffer Cache Simulator
   subtitle: Vue.js, Tailwind CSS
   links:
-    - icon: fontawesome.brands.github
+    - icon: code
       target: https://github.com/rumansaleem/buffercache-getblk
       text: github.com/rumansaleem/buffercache-getblk
-    - icon: zondicons.link
+    - icon: link-2
       target: https://rumansaleem.github.io/buffercache-getblk
       text: rumansaleem.github.io/buffercache-getblk
   details:
@@ -31,10 +31,10 @@
 - title: Social Campus
   subtitle: Laravel, jQuery, Bootstrap
   links:
-    - icon: fontawesome.brands.github
+    - icon: code
       target: https://github.com/rumansaleem/SocialCampus
       text: github.com/rumansaleem/SocialCampus
-    - icon: zondicons.link
+    - icon: link-2
       target: https://social-campus.herokuapp.com
       text: social-campus.herokuapp.com
 
