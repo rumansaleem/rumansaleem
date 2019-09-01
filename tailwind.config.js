@@ -17,8 +17,12 @@ module.exports = {
         '48': '12rem',
         '64': '16rem',
       },
+      width: {
+        ...(theme => theme('screens')),
+      },
       minWidth: {
         '80': '20rem',
+        ...(theme => theme('screens')),
       },
       screens: {
         'print': {raw: 'print'}

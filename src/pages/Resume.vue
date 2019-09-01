@@ -1,6 +1,6 @@
 <template>
-    <Layout class="bg-white">
-    <div ref="resume" class="resume-wrapper narrow-container mx-auto bg-white text-gray-900 leading-tight mt-8 print:mt-0">
+    <Layout class="md:bg-gray-100 print:bg-white">
+    <div ref="resume" class="print:p-0 print:border-0 bg-white md:p-8 md:pl-12 md:border md:border-gray-600 resume-wrapper narrow-container mx-auto text-gray-900 leading-tight mt-8 print:mt-0">
       <div class="personal-area">
           <h1 class="text-3xl" v-text="main.title"></h1>
           <h3 class="uppercase text-gray-600 mb-3" v-text="main.subtitle"></h3>
@@ -86,6 +86,9 @@
           </div>
       </resume-section>
     </div>
+    <p class="text-center tex-sm text-gray-600 mt-4 mb-6"> 
+      <b>Note:</b> Please print using <em>firefox</em> for a better print.
+    </p>
     <button @click="print" class="fixed bottom-0 right-0 mb-6 mr-6 bg-teal-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md print:hidden">
         <feather-icon name="printer" class="w-4 h-4" :strokeWidth="2.5"></feather-icon>
     </button>
