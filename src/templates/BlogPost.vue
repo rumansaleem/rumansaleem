@@ -112,11 +112,14 @@ export default {
   .md-content > .code-with-output {
     @apply my-8;
   }
+  .md-content > pre {
+    margin: 1.5rem 0 !important;
+  }
   .md-content > pre,
   .md-content > .code-with-output > pre {
-    @apply mb-8 rounded-lg pt-8 relative font-mono;
+    @apply rounded-lg pt-8 relative font-mono;
   }
-  .md-content > pre::after,
+  
   .md-content > .code-with-output > pre::after {
     content: 'code';
     @apply absolute font-sans text-gray-600 font-semibold uppercase text-xs top-0 left-0 mt-2 ml-4;
@@ -167,6 +170,9 @@ export default {
     @apply bg-gray-200 border-l-4 py-2 pr-2 pl-4 border-teal-600 rounded overflow-hidden my-6;
   }
   .md-content blockquote > p {
+    @apply mb-2;
+  }
+  .md-content blockquote > p:last-child {
     @apply mb-0;
   }
   .md-content blockquote > h3,

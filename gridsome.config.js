@@ -67,6 +67,7 @@ module.exports = {
       plugins: [
         'remark-attr',
         require('./HighlightCodeAndRender'),
+        ['@gridsome/remark-prismjs', {transformInlineCode: false}],
         require('./ImageToFigureCaption')
       ]
     }
