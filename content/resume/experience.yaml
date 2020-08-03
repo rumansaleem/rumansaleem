@@ -1,3 +1,14 @@
+- title: Pipeline Information Management System
+  subtitle: Freelance Frontend Developer
+  timeline: June 2020 - July 2020
+  show: true
+  details:
+    - worked for a freelancing agency, who received the project from HPCL.
+    - built from scratch with <em>Angular 9</em> & <em>TailwindCSS</em> using reactive state management with <em>NgRx</em> & <em>RxJs</em>.
+    - imlemented mock APIs & actual APIs with swappable implementations.
+    - developed a feature-rich printable map using <em>leaflet</em> to present various information related to piplines.
+    - designed and developed a dynamic query builder to query from different type of records on the maps.
+
 - title: SIP Wealth
   subtitle: Freelance Web Developer
   timeline: February 2018 - July 2018

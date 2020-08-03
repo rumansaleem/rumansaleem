@@ -95,9 +95,10 @@ h3, h4 {
 
 @page {
   size: A4 portrait;
-  margin: 1cm;
+  margin: .75cm;
   font-size: 11pt;
   margin-right: .5cm;
+  @apply font-sans;
 }
 
 details summary::-webkit-details-marker {

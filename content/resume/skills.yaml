@@ -1,8 +1,11 @@
 - header: Frameworks
   list:
     - Laravel
-    - Vue.js
+    - Laravel Livewire
+    - AlpineJS
     - Tailwind CSS
+    - Vue.js
+    - Angular
 
 - header: Languages
   list:

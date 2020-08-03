@@ -1,5 +1,24 @@
+- title: DUCS Office Portal
+  subtitle: Laravel, AlpineJS, Laravel Livewire, TailwindCSS
+  show: true
+  links:
+    - icon: code
+      target: https://github.com/ducs-office/ducs-office-automation
+      text: github.com/ducs-office/ducs-office-automation
+    - icon: link-2
+      target: https://office.cs.du.ac.in
+      text: office.cs.du.ac.in
+  details:
+    - <em>lead</em> the team of 2 other people, as a part of M.Sc curriculum's major project.
+    - designed and developed portal (officially) for department's office staff, research scholars and supervisors.
+    - office staff collects (with deadlines) and manages teaching records.
+    - supervisors manages scholars under them and scholar keep their work updated on the portal.
+    - implemented authorization with flexible roles and permissions.
+    - followed TDD and wrote a total of 573 test cases.
+
 - title: Sankalan Portal
   subtitle: Laravel, Vue.js, Tailwind CSS
+  show: true
   links:
     - icon: code
       target: https://github.com/csdu/sankalan-portal
@@ -11,11 +30,12 @@
   details:
     - designed and developed website for annual technical festival organised by students of the department.
     - implemented online registration system, quiz management and automated scoring.
-    - wrote automated feature tests, following TDD process along with continuous integration.
+    - wrote automated feature tests, following <em>TDD</em> process along with continuous integration.
     - handled deployment with SSL certificate and continuous deployment.
 
 - title: Buffer Cache Simulator
   subtitle: Vue.js, Tailwind CSS
+  show: true
   links:
     - icon: code
       target: https://github.com/rumansaleem/buffercache-getblk
@@ -25,11 +45,12 @@
       text: rumansaleem.github.io/buffercache-getblk
   details:
     - built a web based simulator to help people understand the working of buffer cache's getblk algorithm as per the UNIX System V.
-    - used Vue to render data driven visuals.
-    - used Vuex store for state management.
+    - used <em>Vue</em> to render data driven visuals.
+    - used <em>Vuex</em> store for state management.
 
 - title: Social Campus
   subtitle: Laravel, jQuery, Bootstrap
+  show: false
   links:
     - icon: code
       target: https://github.com/rumansaleem/SocialCampus

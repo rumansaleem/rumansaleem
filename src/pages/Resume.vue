@@ -1,6 +1,6 @@
 <template>
     <Layout class="md:bg-gray-100 print:bg-white">
-    <div ref="resume" class="print:p-0 print:border-0 bg-white md:p-8 md:pl-12 md:border md:border-gray-600 resume-wrapper narrow-container mx-auto text-gray-900 leading-tight mt-8 print:mt-0">
+    <div ref="resume" class="resume print:p-0 print:border-0 bg-white md:p-8 md:pl-12 md:border md:border-gray-600 resume-wrapper narrow-container mx-auto text-gray-900 leading-tight mt-8 print:mt-0">
       <div class="personal-area">
           <h1 class="text-3xl" v-text="main.title"></h1>
           <h3 class="uppercase text-gray-600 mb-3" v-text="main.subtitle"></h3>
@@ -20,7 +20,7 @@
             </div>
             <p v-if="education.institute" v-text="education.institute"></p>
             <p v-if="education.board" v-text="education.board"></p>
-            <p v-if="education.score" v-text="education.score"></p>
+            <p class="mt-1 text-xs font-semibold" v-if="education.score" v-html="education.score"></p>
         </div>
       </resume-section>
       <resume-section class="skills-area mb-3">
@@ -57,25 +57,25 @@
       </resume-section>
       <resume-section class="projects-area">
           <template slot="header">Projects</template>
-          <div class="mb-6 no-break-inside" v-for="project in projects" :key="project.title">
-              <div class="w-full font-semibold text-gray-700 mb-2">
-                  <h4 class="text-gray-900" v-text="project.title"></h4>
-                  <h5 class="text-sm font-semibold" v-text="project.subtitle"></h5>
-              </div>
-              <div class="flex-1">
-                <ul class="list-disc pl-4 mb-2">
-                    <li v-for="(sentence, index) in project.details" :key="index" v-html="sentence" class="mb-1"></li>
-                </ul>
-                <p class="flex items-center font-normal mb-1" v-for="link in project.links" :key="link.target">
-                  <feather-icon :name="link.icon" class="h-current mr-2"></feather-icon>
-                  <a :href="link.target" v-text="link.text" class="hover:underline"></a>
-                </p>
-              </div>
+          <div class="mb-6 no-break-inside" v-for="project in displayProjects" :key="project.title">
+            <div class="w-full font-semibold text-gray-700 mb-2">
+                <h4 class="text-gray-900" v-text="project.title"></h4>
+                <h5 class="text-sm font-semibold" v-text="project.subtitle"></h5>
+            </div>
+            <div class="flex-1">
+              <ul class="list-disc pl-4 mb-2">
+                  <li v-for="(sentence, index) in project.details" :key="index" v-html="sentence" class="mb-1"></li>
+              </ul>
+              <p class="flex items-center font-normal mb-1" v-for="link in project.links" :key="link.target">
+                <feather-icon :name="link.icon" class="h-current mr-2"></feather-icon>
+                <a :href="link.target" v-text="link.text" class="hover:underline"></a>
+              </p>
+            </div>
           </div>
-      </resume-section>
-      <resume-section class="hackathons-area">
+      </resume-section> 
+      <resume-section class="hackathons-area no-break-inside">
           <template slot="header">Hackathons</template>
-          <div v-for="hackathon in hackathons" class="mb-6 no-break-inside" :key="hackathon.title">
+          <div v-for="hackathon in hackathons" class="mb-6" :key="hackathon.title">
               <div class="w-full font-semibold text-gray-700 mb-2">
                   <h4 class="text-gray-900" v-text="hackathon.title"></h4>
                   <p class="text-sm font-semibold" v-text="hackathon.subtitle"></p>
@@ -86,7 +86,7 @@
           </div>
       </resume-section>
     </div>
-    <p class="text-center tex-sm text-gray-600 mt-4 mb-6"> 
+    <p class="print:hidden text-center text-sm text-gray-600 mt-4 mb-6"> 
       <b>Note:</b> Please print using <em>firefox</em> for a better print.
     </p>
     <button @click="print" class="fixed bottom-0 right-0 mb-6 mr-6 bg-teal-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md print:hidden">
@@ -124,6 +124,9 @@ export default {
     works() {
       return this.experience.filter(work => work.show);
     },
+    displayProjects() {
+      return this.projects.filter(project => project.show);
+    },
     projectsWithSource() {
       return this.projects.filter(p => p.source);
     }
@@ -136,6 +139,16 @@ export default {
 <style lang="postcss">
 summary {
   @apply flex;
+}
+
+.resume em {
+  @apply font-semibold italic;
+}
+@media print {
+  .resume em {
+    font-weight: semibold !important;
+    font-style: italic !important;
+  }
 }
 
 .resume-wrapper {
@@ -157,12 +170,13 @@ summary {
     grid-template-areas: 
       'main experience'
       'education experience'
-      'skills projects'
-      'hackathons projects';
+      'skills experience'
+      'projects projects'
+      'hackathons hackathons';
     grid-template-columns: 18rem 1fr;
     grid-column-gap: 1.5rem;
     grid-row-gap: .75rem;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
   }
 }
 @media print {
@@ -170,12 +184,14 @@ summary {
     grid-template-areas: 
       'main experience'
       'education experience'
-      'skills projects'
-      'hackathons projects';
+      'skills experience'
+      'projects projects'
+      'hackathons hackathons'
+      ;
     grid-template-columns: 18rem 1fr;
     grid-column-gap: 1.5rem;
     grid-row-gap: .75rem;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
   }
 }
 .main-area {
