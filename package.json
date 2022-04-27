@@ -8,22 +8,26 @@
   },
   "dependencies": {
     "@gridsome/remark-prismjs": "^0.3.0",
-    "autoprefixer": "^9.5.1",
-    "gridsome": "^0.6.0",
-    "postcss-nested": "^4.1.2",
-    "remark-attr": "^0.8.3",
-    "tailwindcss": "^1.0.1"
+    "autoprefixer": "^9.8.8",
+    "gridsome": "^0.7.23",
+    "postcss-nested": "^4.2.3",
+    "remark-attr": "^0.8.4",
+    "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^1.2.0",
-    "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@gridsome/source-filesystem": "^0.5.0",
-    "@gridsome/transformer-remark": "^0.3.2",
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "@gridsome/plugin-google-analytics": "^0.1.2",
+    "@gridsome/source-filesystem": "^0.6.2",
+    "@gridsome/transformer-remark": "^0.6.4",
     "escape-html": "^1.0.3",
-    "feather-icons": "^4.24.1",
-    "prismjs": "^1.17.1",
+    "feather-icons": "^4.29.0",
+    "prismjs": "^1.28.0",
     "svg-to-vue-component": "^0.3.8",
-    "unist-util-visit": "^2.0.0",
-    "webpack-bundle-analyzer": "^3.3.2"
+    "unist-util-visit": "^2.0.3",
+    "webpack-bundle-analyzer": "^3.9.0"
+  },
+  "volta": {
+    "node": "12.22.12",
+    "npm": "6.14.16"
   }
 }

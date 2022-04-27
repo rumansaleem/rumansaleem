@@ -1,18 +1,19 @@
 - header: Frameworks
   list:
-    - Laravel
-    - Laravel Livewire
-    - AlpineJS
+    - Spring Boot
+    - ReactJS
     - Tailwind CSS
     - Vue.js
     - Angular
+    - Laravel
+    - AlpineJS
 
 - header: Languages
   list:
-    - PHP
     - JavaScript
-    - Python
     - Java
+    - PHP
+    - Python
 
 - header: Databases
   list:
@@ -29,6 +30,6 @@
 
 - header: Others
   list: 
-    - AWS Lambda, EC2, etc
+    - RabbitMQ
     - Linux
-    - Vector Drawing - Inkscape
+    - Nginx

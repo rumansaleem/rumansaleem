@@ -19,7 +19,7 @@
 </template>
 
 <page-query>
-query blogPost ($id: String!) {
+query blogPost ($id: ID!) {
   post: blogPost (id: $id) {
     id
     title
