@@ -35,7 +35,7 @@
 
 - title: Buffer Cache Simulator
   subtitle: Vue.js, Tailwind CSS
-  show: true
+  show: false
   links:
     - icon: code
       target: https://github.com/rumansaleem/buffercache-getblk

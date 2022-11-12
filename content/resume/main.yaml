@@ -1,6 +1,10 @@
 title: Ruman Saleem
-subtitle: Web Developer
+subtitle: Software Engineer
 links:
+  - target: https://www.linkedin.com/in/ruman-saleem/
+    icon: linkedin
+    text: linkedin.com/in/ruman-saleem
+
   - target: https://github.com/rumansaleem
     icon: github
     text: github.com/rumansaleem

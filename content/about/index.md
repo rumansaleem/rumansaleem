@@ -1,6 +1,6 @@
 ---
 name: Ruman Saleem
-title: Web Developer
+title: Software Engineer
 image: ./ruman-saleem.jpg
 links:
   - icon: github
@@ -17,21 +17,13 @@ links:
     color: blue-400
   - icon: mail
     alt: Email
-    target: 'mailto:ruman63@gamil.com'
+    target: 'mailto:ruman63@gmail.com'
     color: teal-500
 ---
-Hello people! I'm Ruman Saleem ([@ruman_saleem](//twitter.com/ruman_saleem)), a full-stack web developer and a student, 
-doing _M.Sc. Computer Science_ from the [Department of Computer Science, Delhi University](//cs.du.ac.in). 
+Hello world! 👋 I'm Ruman Saleem ([@ruman_saleem](//twitter.com/ruman_saleem)), currently a Software Engineer at [Info Edge (India) Ltd](//infoedge.com ).
 
+I am a passionate Software Developer. I love building beautiful user interfaces and solving complex problems with simpler code.
 
-I'm passionate about building websites. I love building beautiful user interfaces and working with new technologies and frameworks. 
-My favorite tech stack is Laravel, Vue and Tailwind CSS (an awesome utility-first CSS framework).
-I also work with Express.js and CodeIgniter. You might want to check out my [work](/work).
+I have prior experience of about 3 years working with Laravel and some of JavaScript & CSS frameworks. If you want to know more about my experiences you can check out my [work](/work).
 
-
-I occasionally write about my experiences and the new things I learn along the way of building websites.
-Check out my [blog](/blog).
-
-
-I am currently looking for a full-time job, and available for freelance projects (part-time). 
-Here's my [resume](/resume), if you're interested in hiring me.
+I love to speak about my technical experiences, feel free to reach out to me.

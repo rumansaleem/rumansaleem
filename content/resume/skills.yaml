@@ -1,17 +1,20 @@
 - header: Frameworks
   list:
-    - Spring Boot
-    - ReactJS
+    - Spring Boot 
+    - ReactJS 
+    - NextJS 
+    - ExpressJS
+    - Vue.js 
+    - NuxtJS 
     - Tailwind CSS
-    - Vue.js
-    - Angular
+    - Angular 
     - Laravel
-    - AlpineJS
 
 - header: Languages
   list:
-    - JavaScript
-    - Java
+    - JavaScript 
+    - TypeScript 
+    - Java 
     - PHP
     - Python
 
@@ -20,16 +23,23 @@
     - MySQL
     - SQLite
     - Redis
+    - Aerospike
+    - MongoDB
 
 - header: Tooling
   list: 
-    - Git
-    - Webpack
-    - npm / Yarn
+    - Git 
+    - Webpack 
+    - npm / yarn
     - Composer
 
 - header: Others
   list: 
+    - Apache Kafka
     - RabbitMQ
-    - Linux
+    - Redux
+    - State Machines - Xstate
+    - RxJS
     - Nginx
+    - Docker Kubernetes
+    - Linux
