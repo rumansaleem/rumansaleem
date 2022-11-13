@@ -1,10 +1,25 @@
 <template>
   <div id="app" class="min-h-screen flex flex-col text-gray-900 leading-tight">
     <div class="py-2 sm:py-4 font-sans print:hidden text-gray-800">
-      <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
-        <g-link to="/" class="inline-flex items-center text-xl text-teal-500 mb-2 sm:mb-0">
+      <div
+        class="
+          container
+          mx-auto
+          px-4
+          flex flex-col
+          sm:flex-row
+          justify-between
+          items-center
+        "
+      >
+        <g-link
+          to="/"
+          class="inline-flex items-center text-xl text-teal-500 mb-2 sm:mb-0"
+        >
           <site-logo class="logo h-12 mr-2"></site-logo>
-          <span class="text-gray-800 font-semibold whitespace-no-wrap">Ruman</span>
+          <span class="text-gray-800 font-semibold whitespace-no-wrap"
+            >Ruman</span
+          >
           <span class="text-teal-500 font-bold ml-1">Saleem</span>
         </g-link>
         <nav class="flex items-center -mx-2">
@@ -18,10 +33,17 @@
       <slot></slot>
     </div>
     <footer class="bg-white text-gray-500 text-xs mt-4 print:hidden">
-        <p class="text-center py-2 px-8 flex justify-between">
-          <span><b>Ruman Saleem</b> &copy; 2019</span> 
-          <span>built with <a class="link text-gray-600 font-semibold" href="https://gridsome.org">Gridsome</a>, hosted by GitHub Pages</span>
-        </p>
+      <p class="text-center py-2 px-8 flex justify-between">
+        <span><b>Ruman Saleem</b> &copy; 2019</span>
+        <span
+          >built with
+          <a
+            class="link text-gray-600 font-semibold"
+            href="https://gridsome.org"
+            >Gridsome</a
+          >, hosted by GitHub Pages</span
+        >
+      </p>
     </footer>
   </div>
 </template>
@@ -35,92 +57,105 @@ query {
 </static-query>
 
 <script>
-import SiteLogo from './../icons/ruman-saleem-logo.svg';
+import SiteLogo from "./../icons/ruman-saleem-logo.svg";
 
 export default {
   metaInfo() {
     return {
       link: [
-        { prefetch: 'true', rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap"},
-        { prefetch: 'true', rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Muli:300,400,400i,700&display=swap"}
-      ]
-    }
+        {
+          prefetch: "true",
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap",
+        },
+        {
+          prefetch: "true",
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Muli:300,400,400i,700&display=swap",
+        },
+      ],
+    };
   },
   components: { SiteLogo },
   computed: {
     routeComponents() {
-      return this.$route.path.split('/').map(url => url)
+      return this.$route.path.split("/").map((url) => url);
     },
     breadcrumb() {
-      return this.routeComponents.reduce((prev, curr, i) => {
-        const ele = curr == '' ? '/' : prev[i-1] + curr + '/';
-        return [...prev, ele];
-      }, [])
-      .map(link => this.$router.resolve(link))
-      .filter(item => item.route)
-      .map(item => item.route);
-    }
+      return this.routeComponents
+        .reduce((prev, curr, i) => {
+          const ele = curr == "" ? "/" : prev[i - 1] + curr + "/";
+          return [...prev, ele];
+        }, [])
+        .map((link) => this.$router.resolve(link))
+        .filter((item) => item.route)
+        .map((item) => item.route);
+    },
   },
   methods: {
     pathName(route) {
       let name = route.name;
-      
+
       if (!name) {
-        name = route.path.replace(/^\/|\/$/g, '');
+        name = route.path.replace(/^\/|\/$/g, "");
       }
 
       return name.charAt(0).toUpperCase() + name.substring(1).toLowerCase();
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="postcss">
-html, body {
+html,
+body {
   font-size: calc(14px + 0.25vw);
   @apply font-content;
 }
 
 @tailwind base;
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-sans;
 }
 
-h1, h2 {
+h1,
+h2 {
   @apply font-extrabold;
 }
-h3, h4 {
+h3,
+h4 {
   @apply font-bold;
 }
 
 @page {
   size: A4 portrait;
-  margin: .75cm;
+  margin: 0.75cm;
   font-size: 11pt;
-  margin-right: .5cm;
+  margin-right: 0.5cm;
   @apply font-sans;
 }
 
 details summary::-webkit-details-marker {
-  display:none;
+  display: none;
 }
 
 @tailwind components;
-
-.narrow-container {
-  max-width: 768px;
-}
 
 .nav-link {
   @apply mx-2 py-1 px-1 font-bold uppercase text-sm tracking-wider relative leading-snug;
 }
 .nav-link::after {
-  content: '';
+  content: "";
   height: 1.5px;
   @apply absolute w-full left-0 bottom-0 bg-gray-900;
   transform-origin: left;
   transform: translateX(50%) scaleX(0);
-  transition: transform .2s linear, background-color .2s linear;
+  transition: transform 0.2s linear, background-color 0.2s linear;
 }
 .nav-link:hover::after {
   transform: translateX(0) scaleX(1);
@@ -130,17 +165,18 @@ details summary::-webkit-details-marker {
   @apply text-teal-600;
 }
 
-.ruman-saleem-logo_svg__cube, .ruman-saleem-logo_svg__shadow {
-  transition: transform .3s linear;
+.ruman-saleem-logo_svg__cube,
+.ruman-saleem-logo_svg__shadow {
+  transition: transform 0.3s linear;
   transform-origin: center;
 }
 @screen sm {
   .logo:hover {
     .ruman-saleem-logo_svg__cube {
-      transform: translateY(-.5rem);
+      transform: translateY(-0.5rem);
     }
     .ruman-saleem-logo_svg__shadow {
-      transform: translateY(.5rem) scale(0.8);
+      transform: translateY(0.5rem) scale(0.8);
     }
   }
 }
@@ -173,5 +209,4 @@ details summary::-webkit-details-marker {
     display: block;
   }
 }
-
 </style>

@@ -5,16 +5,14 @@
       class="
         resume
         text-sm
-        print:p-0 print:border-0
+        print:p-0 print:border-0 print:mt-0
         bg-white
-        md:p-8 md:pl-12 md:border md:border-gray-600
-        resume-wrapper
-        narrow-container
+        mt-8
+        md:p-8 md:border md:border-gray-600
+        max-w-a4
         mx-auto
         text-gray-900
         leading-tight
-        mt-8
-        print:mt-0
       "
     >
       <div class="mb-2">
@@ -25,9 +23,9 @@
             v-text="main.subtitle"
           ></h3>
         </div>
-        <ul class="block text-center -mx-1">
+        <ul class="block text-center -mx-2">
           <li
-            class="inline-flex items-center whitespace-no-wrap mx-1"
+            class="inline-flex items-center whitespace-no-wrap mx-2"
             v-for="link in main.links"
             :key="link.target"
           >
@@ -71,7 +69,7 @@
               ({{ education.subtitle }})
             </h5>
             <span>-</span>
-            <p v-if="education.institute" class="inline">
+            <p v-if="education.institute" class="inline text-xs">
               {{ education.institute }} ({{ education.board }})
             </p>
             <p
@@ -93,7 +91,7 @@
             class="flex-none font-semibold text-gray-800"
             v-text="skill.header + ': '"
           ></dt>
-          <dd class="" v-text="skill.list.join(', ')"></dd>
+          <dd class="text-xs" v-text="skill.list.join(', ')"></dd>
         </dl>
       </resume-section>
       <resume-section class="">
@@ -172,9 +170,6 @@
         </div>
       </resume-section>
     </div>
-    <p class="print:hidden text-center text-sm text-gray-600 mt-4 mb-6">
-      <b>Note:</b> Please print using <em>firefox</em> for a better print.
-    </p>
     <button
       @click="print"
       class="
@@ -254,7 +249,9 @@ export default {
 summary {
   @apply flex;
 }
-
+@page {
+  margin: 0.1in;
+}
 .resume em {
   @apply font-semibold italic;
 }

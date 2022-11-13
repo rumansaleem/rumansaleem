@@ -1,21 +1,31 @@
 - title: InfoEdge (India) Ltd | Jeevansathi
-  subtitle: Senior Software Engineer
-  timeline: May 2021 - Current
+  subtitle: Lead Engineer
+  timeline: April 2022 - Current
   show: true
   details:
-    - created a foundational React Multi-page project with custom webpack confguration with widget support (embeddable into legacy code, PHP rendered templates).
-    - introduced TypeScript to the stack, and guided teammates to work without any productivity killers, and promote strongly typed code that is more robust and predictable.
-    - added ESLint into the build system to help eliminate potential bugs at an earlier stage.
+    - Setup <b>Apache Kafka</b> cluster on the production servers (on-prem) and guided multiple teams to help adopt Kafka platform.
+    - presented ideas on <b>Event Driven Architecture</b> and the design patterns around it, to the whole tech team.
+    - Set up Kafka Connect with Debezium MySQL conenctors on all production, testing & development environments, to implement <b>transactional outbox pattern</b>. Supported teams to help them modelling event payloads while keeping an event mindset rather than plain messaging.
+    - implemented Circuit Breaker, bulkhead, with Retry patterns in suitable modules to improve overall system resiliency and fault tolerance.
+
+- title: InfoEdge (India) Ltd | Jeevansathi
+  subtitle: Senior Software Engineer
+  timeline: April 2021 - March 2022
+  show: true
+  details:
+    - created a foundational <b>React</b> Multi-page project with custom webpack confguration with added widget support (embeddable into legacy code, PHP rendered templates).
+    - introduced <b>TypeScript</b> to the stack, and guided teammates to work without any productivity killers, and promote strongly typed code that is more robust and predictable.
+    - added <b>ESLint</b> into the build system to help eliminate potential bugs and bad practices at an earlier stage.
     - built interactive UI components on top of headless components to keep them reusable and extensible.
     - recognised with Rockstar of the month once, and a quarterly Top Gun Award for the high-impact work.
-    - extracted out post-payment, membership subscription activation tasks into a separate spring boot microservice.
-    - improved checkout experience by using RabbitMQ Queues, to asynchronously handle all post-payment tasks, including activation, invoicing, fulfllments, etc.
+    - extracted out post-payment, membership subscription activation tasks into a separate <b>Spring Boot</b> microservice.
+    - improved checkout experience by using <b>RabbitMQ</b> Queues, to asynchronously handle all post-payment tasks, including activation, invoicing, fulfllments, etc.
     - developed post-payment tasks while keeping track of the states, and wrote reconcilation job to easily reconcile the failed activations.
     - migrated user registration flow tracking APIs from legacy monolithic PHP application to a isolated spring boot microservice.
 
 - title: InfoEdge (India) Ltd | Jeevansathi
   subtitle: Software Engineer (Frontend)
-  timeline: August 2020 - April 2021
+  timeline: August 2020 - March 2021
   show: true
   details: 
     - developed a tricky parallax animation on the feature section on Jeevansathi's PC homepage using vanilla JS and CSS.

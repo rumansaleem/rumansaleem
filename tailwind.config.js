@@ -19,10 +19,14 @@ module.exports = {
       },
       width: {
         ...(theme => theme('screens')),
+        a4: '210mm'
       },
       minWidth: {
         '80': '20rem',
         ...(theme => theme('screens')),
+      },
+      maxWidth: {
+        a4: '210mm',
       },
       screens: {
         'print': {raw: 'print'}
