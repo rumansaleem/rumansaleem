@@ -1,20 +1,37 @@
-- header: Frameworks
-  list:
-    - Spring Boot
-    - ReactJS
-    - Tailwind CSS
-    - Vue.js
-    - Angular
-    - Laravel
-    - AlpineJS
-
 - header: Languages
   list:
-    - JavaScript
+    - JavaScript 
+    - TypeScript
     - Java
     - PHP
     - Python
+- header: Frameworks
+  list:
+    - ReactJS
+    - NextJS 
+    - ExpressJS
+    - Vue.js
+    - NuxtJS
+    - Tailwind CSS
+    - Angular
+    - Spring Boot
+    - Laravel
+    # - AlpineJS
+# - header: Patterns
+#   list:
+#     # - Spring Boot
+#     - Reactive Programming (RxJS)
+#     - Map, Filter, Reduce
+#     - Redux
+#     - State Machines
 
+    # - Python
+# - header: Paradigms
+#   list: 
+#     - Reactive Programming (RxJs)
+#     - Functional Programming
+#     - MVC
+#     - 
 - header: Databases
   list:
     - MySQL
@@ -25,11 +42,15 @@
   list: 
     - Git
     - Webpack
-    - npm / Yarn
+    - npm / yarn
     - Composer
 
-- header: Others
+- header: Miscellaneous
   list: 
+    - Redux
+    - State Machines - Xstate
+    - RxJS
     - RabbitMQ
+    - Nginx 
+    - Docker
     - Linux
-    - Nginx

@@ -11,7 +11,7 @@
   details:
     - <em>lead</em> the team of 2 other people, as a part of M.Sc curriculum's major project.
     - designed and developed portal (officially) for department's office staff, research scholars and supervisors.
-    - office staff collects (with deadlines) and manages teaching records.
+    - office staff collects teaching records from UG college teachers and assign examination duties based on their data.
     - supervisors manages scholars under them and scholar keep their work updated on the portal.
     - implemented authorization with flexible roles and permissions.
     - followed TDD and wrote a total of 573 test cases.
@@ -35,7 +35,7 @@
 
 - title: Buffer Cache Simulator
   subtitle: Vue.js, Tailwind CSS
-  show: true
+  show: false
   links:
     - icon: code
       target: https://github.com/rumansaleem/buffercache-getblk

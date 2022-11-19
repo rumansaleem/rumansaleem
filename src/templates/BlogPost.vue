@@ -13,7 +13,6 @@
       <hr class="md:border-b-2 border-gray-800 ml-0 mb-10">
       <article class="md-content leading-snug" v-html="$page.post.content">
       </article>
-
     </div>
   </Layout>
 </template>

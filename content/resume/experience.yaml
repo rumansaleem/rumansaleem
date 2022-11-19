@@ -1,18 +1,46 @@
+- title: InfoEdge (India) Ltd | Jeevansathi
+  subtitle: Senior Software Engineer 
+  timeline: May 2021 - Current
+  show: true
+  details: 
+    - created a foundational <em>React</em> Multi-page project with custom webpack configuration with widget support (embeddable into legacy code, PHP rendered templates).
+    - introduced <b>TypeScript</b> to the stack, and guided teammates to work without any productivity killers, and promote strongly typed code that is more robust and predictable.
+    - added <em>ESLint</em> into `the build system to help eliminate potential bugs at an earlier stage.
+    - built interactive UI components on top of headless components to keep them reusable and extensible.
+    - recognised with <em>Rockstar of the month</em> once, and a quarterly <em>Top Gun Award</em> for the high-impact work.
+    - extracted out post-payment, membership subscription activation tasks into a separate <em>spring boot microservice</em>.
+    - improved checkout experience by using RabbitMQ Queues, to asynchronously handle all post-payment tasks, including activation, invoicing, fulfillments, etc.
+    - developed post-payment tasks while keeping track of the states, and wrote reconcilation job to easily reconcile the failed activations.
+    - migrated user registration flow tracking APIs from legacy monolithic PHP application to a isolated spring boot microservice.
+    
+- title: InfoEdge (India) Ltd | Jeevansathi
+  subtitle: Software Engineer (Frontend)
+  timeline: August 2020 - April 2021
+  show: true
+  details:
+    - developed a tricky parallax animation on the feature section on Jeevansathi's PC homepage using vanilla <em>JS</em> and <em>CSS</em>.
+    - built deeper understanding of the existing legacy systems and the overall front-end infrastructure.
+    - recognized with Rockstar Award of the month (October) for excellent work as a fresher.
+    - guided teammates through the legacy PHP templating system, and complex jquery code.
+    - decoupled a React SPA for mobile site, rendered by a legacy monolithic PHP application, and extracted into a separate independently deployable repository, served directly by Nginx as static website.
+    - moved complex php application level routing for SPA (mobile traffic), directly to <em>Nginx</em> by just a few simple rules, and a NodeJS redirection middleware for backwards compatible URLs.
+    
 - title: Pipeline Information Management System
   subtitle: Freelance Frontend Developer
   timeline: June 2020 - July 2020
   show: true
   details:
     - worked for a freelancing agency, who received the project from HPCL.
-    - built from scratch with <em>Angular 9</em> & <em>TailwindCSS</em> using reactive state management with <em>NgRx</em> & <em>RxJs</em>.
-    - imlemented mock APIs & actual APIs with swappable implementations.
-    - developed a feature-rich printable map using <em>leaflet</em> to present various information related to piplines.
+    - built with <em>Angular 9</em> & <em>TailwindCSS</em> using reactive state management with <em>NgRx</em> & <em>RxJs</em>.
+    - developed a feature-rich printable map using <em>leaflet</em> to present various information related to gas pipline network across the country.
+    - developed system to maintain a large variety of map layers, with the ability to interactively show or hide them individually or in a group.
     - designed and developed a dynamic query builder to query from different type of records on the maps.
+    - imlemented mock APIs & actual APIs with swappable implementations.
 
 - title: SIP Wealth
   subtitle: Freelance Web Developer
   timeline: February 2018 - July 2018
-  show: true
+  show: false
   link: 
     icon: link-2
     target: https://sipwealth.co.in
@@ -30,7 +58,7 @@
 - title: Pure Media Imagination
   subtitle: Web Developer (Intern)
   timeline: June 2017 - July 2017
-  show: true
+  show: false
   link:
     icon: link-2
     target: https://thepuremedia.com
