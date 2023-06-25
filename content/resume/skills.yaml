@@ -12,9 +12,9 @@
 
 - header: Languages
   list:
+    - Java 
     - JavaScript 
     - TypeScript 
-    - Java 
     - PHP
     - Python
 
@@ -29,18 +29,19 @@
 - header: Tooling
   list: 
     - Git 
+    - Gradle / Maven
     - Webpack 
     - npm / yarn
-    - Composer
+    - Bash
 
 - header: Others
   list: 
     - Apache Kafka
     - RabbitMQ
-    - Redux
-    - State Machines - Xstate
-    - RxJS
     - Nginx
     - Docker
     - Kubernetes
+    - Redux
+    - State Machines - Xstate
+    - RxJS
     - Linux

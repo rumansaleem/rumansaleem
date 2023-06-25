@@ -3,22 +3,27 @@ subtitle: Software Engineer
 links:
   - target: mailto:ruman63@gmail.com
     icon: at-sign
+    label: "Email"
     text: ruman63@gmail.com
     
   - target: https://www.linkedin.com/in/ruman-saleem/
     icon: linkedin
+    label: LinkedIn Profile
     text: linkedin.com/in/ruman-saleem
 
   - target: https://github.com/rumansaleem
     icon: github
+    label: "GitHub Profile"
     text: github.com/rumansaleem
   
 
   - target: https://rumansaleem.github.io
     icon: globe
+    label: "Personal Website / Blog"
     text: rumansaleem.github.io
 
     
-  - target: mailto:+918510052301
-    icon: phone
-    text: +91-8510052301
+  - target: "#"
+    icon: map
+    label: "Current Location"
+    text: Noida, UP, India
