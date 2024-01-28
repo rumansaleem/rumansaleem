@@ -3,10 +3,11 @@
   timeline: April 2022 - Current
   show: true
   details:
-    - implemented different design patterns to improve system's fault tolerance and improved resiliency.
-    - developed profile impressions monetization system handling around <em>12 millions</em> impressions per day.
-    - conducted several sessions on Apache Kafka to help integrating Kafka in existing systems.
-    - setup <em>Apache Kafka</em> & <em>Kafka Connect</em> with debezium mysql connector, for different environments. 
+    - redesigned the automatic photo screening system with <b>event streaming</b>, reducing the screening time from 30-60 mins to 1-2 min (<b>~96%</b> reduction).
+    - devised a generic algorithm to crop photos to any target dimensions while keeping the detected face at desired distance and position.
+    - designed and developed profile impression tracking system handling <em>~2.4 Cr</em> impression/day.
+    - implemented <b>transactional outbox pattern</b> to publish <b>~20-25 Lac</b> profile connect events/day and calculate profile rating.
+    - conducted several sessions on Apache Kafka to help integrating Kafka and event streaming in existing systems.
 
 - title: InfoEdge (India) Ltd | Jeevansathi
   subtitle: Senior Software Engineer

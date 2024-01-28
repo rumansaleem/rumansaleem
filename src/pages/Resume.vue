@@ -24,11 +24,11 @@
       </div>
       <resume-section class="mb-2">
         <template slot="header">Work Experience</template>
-        <div class="mb-6" v-for="positions, title in works" :key="work">
-          <h4 class="text-gray-900 mb-1" v-text="title"></h4>
+        <div class="mb-6" v-for="positions, title in works" :key="title">
+          <h3 class="text-gray-900 mb-1" v-text="title"></h3>
           <div v-for="work in positions" :key="[work.title, work.subtitle].join('_')" class="mb-2">
             <div class="mb-2 w-full font-semibold text-gray-800">
-              <h5 class="text-sm font-semibold" v-text="work.subtitle"></h5>
+              <h4 class="text-sm font-semibold" v-text="work.subtitle"></h4>
               <p class="text-sm" v-text="work.timeline"></p>
             </div>
             <div class="flex-1">
@@ -47,20 +47,20 @@
         <template slot="header">Education</template>
         <div v-for="education in educations" class="mb-1" :key="education.title">
           <div class="inline-block space-x-1">
-            <h4 class="
+            <h3 class="
                 inline-block
                 font-semibold
                 whitespace-no-wrap
                 text-gray-900
-              " v-text="education.title"></h4>
-            <h5 class="
+              " v-text="education.title"></h3>
+            <h4 class="
                 inline-block
                 font-semibold
                 whitespace-no-wrap
                 text-gray-700
               ">
               ({{ education.subtitle }})
-            </h5>
+            </h4>
             <span>-</span>
             <p v-if="education.institute" class="inline text-xs">
               {{ education.institute }} ({{ education.board }})
