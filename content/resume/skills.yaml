@@ -1,47 +1,46 @@
-- header: Frameworks
-  list:
-    - Spring Boot 
-    - ReactJS 
-    - NextJS 
-    - ExpressJS
-    - Vue.js 
-    - NuxtJS 
-    - Tailwind CSS
-    - Angular 
-    - Laravel
-
-- header: Languages
+- header: Back-end Technologies
   list:
     - Java 
-    - JavaScript 
-    - TypeScript 
+    - Spring Boot
     - PHP
+    - Laravel
+    - Next.js
+    - Express
+    - Nuxt 
     - Python
+    - Rust
+- header: Front-end Technologies
+  list:
+    - JavaScript/TypeScript 
+    - React 
+    - Vue.js 
+    - Tailwind CSS
+    - Angular 
+    - GraphQL
 
-- header: Databases
+- header: Databases & Messaging
   list:
     - MySQL
-    - SQLite
     - Redis
     - Aerospike
     - MongoDB
-
-- header: Tooling
-  list: 
-    - Git 
-    - Gradle / Maven
-    - Webpack 
-    - npm / yarn
-    - Bash
-
-- header: Others
-  list: 
     - Apache Kafka
     - RabbitMQ
+
+- header: Paradigms
+  list:     
+    - Event Driven Architecture
+    - Clean Architecture
+    - Domain Driven Design
+    - Test Driven Development
+    - Reactive Programming
+
+- header: Miscellaneous
+  list: 
+    - AWS S3
     - Nginx
     - Docker
     - Kubernetes
-    - Redux
-    - State Machines - Xstate
-    - RxJS
-    - Linux
+    - Git
+    - Bash
+

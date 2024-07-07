@@ -1,38 +1,47 @@
 - title: InfoEdge (India) Ltd | Jeevansathi
   subtitle: Lead Engineer
-  timeline: April 2022 - Current
+  timeline: 2022 - Current
   show: true
+  stack: Java, Spring Boot, Apache Kafka, Debezium, MySQL, Next.js, TypeScript, Redux, PromQL
   details:
-    - redesigned the automatic photo screening system with <b>event streaming</b>, reducing the screening time from 30-60 mins to 1-2 min (<b>~96%</b> reduction).
-    - devised a generic algorithm to crop photos to any target dimensions while keeping the detected face at desired distance and position.
-    - designed and developed profile impression tracking system handling <em>~2.4 Cr</em> impression/day.
-    - implemented <b>transactional outbox pattern</b> to publish <b>~20-25 Lac</b> profile connect events/day and calculate profile rating.
-    - conducted several sessions on Apache Kafka to help integrating Kafka and event streaming in existing systems.
+    - Strategized and executed detailed technical roadmaps for profile and photo modules; mentored a team of 3.
+    - Enhanced the automatic photo screening algorithm to improve efficiency from 68% to 82%, resulting in a 44% reduction in manual screening workload and increasing overall operational efficiency significantly.
+    - Optimized the photo pre-processing and the automatic screening system by leveraging <b>Apache Kafka</b> for <b>event streaming</b>; reduced the screening time by <b>~96%</b>, from 30-60 mins to 1-2 min.
+    - Developed a custom algorithm to dynamically crop photos for different use cases, optimizing face coverage and dimensions; improved platform photo quality.
+    - Led the containerization and migration of 9 microservices deployments from VMs to Kubernetes.
+    - Led a team of 4 developers for the website revamp using Next.js, React, and TypeScript, ensuring high-quality coding standards through detailed code reviews and design guidance; integrated CI/CD pipelines with GitLab for ESLint and TypeScript error checks.
+    - Implemented a new monitoring and alerting ecosystem using Grafana and Prometheus; integrated Prometheus with key metrics across all Java microservices utilizing Micrometer for custom metrics.
+    - Designed and developed the profile impressions tracking system, handling <b>~2.4 Cr</b> impressions/day.
+    - Implemented <b>transactional outbox pattern</b> to publish <b>~20-25 Lac</b> profile connect events/day to calculate profile rating.
+    - Conducted a hands-on session on Apache Kafka to help integrate Kafka and event streaming in existing systems.
 
 - title: InfoEdge (India) Ltd | Jeevansathi
   subtitle: Senior Software Engineer
-  timeline: April 2021 - March 2022
+  timeline: 2021 - 2022
   show: true
+  stack: Java, Spring Boot, RabbitMQ, TypeScript, JavaScript, React, Webpack
   details:
-    - improved post-payment experience by asynchronously handling the post-payment tasks - service activations, fulfillments, and invoicing with automatic reconcilation.
-    - helped teams maintain high quality & robust code making use of different tools like <b>ESLint</b> & <b>TypeScript</b>.
-    - created a foundational <b>React</b> Multi-page React project with custom webpack configuration for gradual migration to React.
+    - Enhanced post-payment experience by asynchronously handling the post-payment tasks - service activations, fulfillments, and invoicing with automatic reconcilation.
+    - Helped teams adopt tools like <b>ESLint</b> & <b>TypeScript</b> to maintain high quality & robust code and increase productivity.
+    - Created a foundational <b>React</b> Multi-page React project with custom webpack configuration for gradual migration to React.
 
 - title: InfoEdge (India) Ltd | Jeevansathi
   subtitle: Software Engineer
-  timeline: August 2020 - March 2021
+  timeline: 2020 - 2021
   show: true
+  stack: Nginx, React, CSS, HTML, PHP, Symfony, Jenkins
   details: 
-    - studied production nginx rules and added new rules to handle the extracted SPA traffic.
-    - extracted coupled React SPA from a server-rendered application & built a jenkins job for deployments.
-    - developed a tricky parallax animation on the feature section on homepage.
+    - Extracted a coupled React SPA from a server-rendered monolith application; worked closely with TechOps to update a huge Nginx condifuration to redistribute traffic through frontend gateway.
+    - Introduced front gateway to navigate across different frontend repositories, enabling easier and controlled migrations.
+    - Collaborated with product and backend teams to understand requirements and integrate features, delivering high quality features with zero production bugs.
+    - Developed a tricky parallax animation on the feature section on homepage.
 
 - title: Pipeline Information Management System
   subtitle: Freelance Frontend Developer
-  timeline: June 2020 - July 2020
+  timeline: 2020 - 2020
   show: false
   details:
-    - worked for a freelancing agency, who received the project from HPCL.
+    - worked for a freelancing agency, responsible for developing a frontend-heavy Pipeline Info Management system..
     - built with Angular 9 & TailwindCSS using reactive state management with NgRx & RxJs.
     - developed a feature-rich printable map using leafet to present various information related to gas pipline network across the country.
     - developed system to maintain a large variety of map layers, with the ability to interactively show or hide them individually or in a group.
@@ -41,7 +50,7 @@
 
 - title: SIP Wealth
   subtitle: Freelance Web Developer
-  timeline: February 2018 - July 2018
+  timeline: 2018 - 2018
   show: false
   link: 
     icon: link-2

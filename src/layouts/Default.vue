@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="min-h-screen flex flex-col text-gray-900 leading-tight">
-    <div class="py-2 sm:py-4 font-sans print:hidden text-gray-800">
+    <div class="py-2 sm:py-4 font-system-stack print:hidden text-gray-800">
       <div
         class="
           container
@@ -110,7 +110,7 @@ export default {
 html,
 body {
   font-size: calc(14px + 0.25vw);
-  @apply font-content;
+  @apply font-system-stack;
 }
 
 @tailwind base;
@@ -120,16 +120,20 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-sans;
+  @apply font-system-stack;
 }
 
 h1,
 h2 {
-  @apply font-extrabold;
+  @apply font-bold;
 }
 h3,
 h4 {
   @apply font-bold;
+}
+
+b {
+  font-weight: 600;
 }
 
 @page {
@@ -137,7 +141,6 @@ h4 {
   margin: 0.75cm;
   font-size: 11pt;
   margin-right: 0.5cm;
-  @apply font-sans;
 }
 
 details summary::-webkit-details-marker {

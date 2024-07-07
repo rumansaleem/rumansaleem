@@ -1,6 +1,6 @@
 - title: DUCS Office Portal
   subtitle: Laravel, AlpineJS, Laravel Livewire, TailwindCSS
-  show: true
+  show: false
   links:
     - icon: code
       target: https://github.com/ducs-office/ducs-office-automation
@@ -18,7 +18,7 @@
 
 - title: Sankalan Portal
   subtitle: Laravel, Vue.js, Tailwind CSS
-  show: true
+  show: false
   links:
     - icon: code
       target: https://github.com/csdu/sankalan-portal
@@ -58,7 +58,6 @@
     - icon: link-2
       target: https://social-campus.herokuapp.com
       text: social-campus.herokuapp.com
-
   details:
     - designed and developed social networking website for college students that featured real-time messaging, post sharing, comments.
     - real-time messaging incorporated using an open source socket server and redis pub/sub.

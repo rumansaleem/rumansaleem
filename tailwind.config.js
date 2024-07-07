@@ -2,6 +2,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        "system-stack": `system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
         sans: ['Open Sans', 'Droid Sans', 'sans-serif'],
         content: ['Muli', 'sans-serif'],
         mono: ['Fira Mono', 'monospace']
@@ -11,6 +12,7 @@ module.exports = {
       },
       height: {
         current: '1em',
+        '2px': '2px'
       },
       maxHeight: {
         '32': '8rem',

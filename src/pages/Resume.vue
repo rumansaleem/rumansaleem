@@ -11,28 +11,30 @@
         mx-auto
         text-gray-900
         leading-tight
+        space-y-4
       ">
-      <div class="mb-2">
-        <h1 class="text-3xl font-black" v-text="main.title"></h1>
-        <h3 class="text-lg uppercase text-gray-600 mb-3" v-text="main.subtitle"></h3>
-        <ul class=" text-center -mx-2 grid grid-cols-3 gap-1">
+      <div>
+        <h1 class="text-3xl" v-text="main.title"></h1>
+        <h3 class="text-lg uppercase text-gray-800 mb-3" v-text="main.subtitle"></h3>
+        <ul class="text-center -mx-2 grid grid-cols-3 gap-1">
           <li class="inline-flex items-center whitespace-no-wrap mx-2" v-for="link in main.links" :key="link.target">
-            <feather-icon :name="link.icon" :title="link.label" class="inline-block h-current mr-1"></feather-icon>
-            <a class="inline-block hover:underline" :href="link.target" v-text="link.text"></a>
+            <feather-icon :name="link.icon" :title="link.label" class="inline-block flex-none h-current mr-1"></feather-icon>
+            <a class="inline-block underline" :href="link.target" v-text="link.text"></a>
           </li>
         </ul>
       </div>
-      <resume-section class="mb-2">
+      <p v-if="main.showSummary" v-text="main.summary"></p>
+      <resume-section>
         <template slot="header">Work Experience</template>
-        <div class="mb-6" v-for="positions, title in works" :key="title">
-          <h3 class="text-gray-900 mb-1" v-text="title"></h3>
-          <div v-for="work in positions" :key="[work.title, work.subtitle].join('_')" class="mb-2">
-            <div class="mb-2 w-full font-semibold text-gray-800">
-              <h4 class="text-sm font-semibold" v-text="work.subtitle"></h4>
-              <p class="text-sm" v-text="work.timeline"></p>
-            </div>
-            <div class="flex-1">
-              <ul class="list-disc pl-4">
+        <div v-for="positions, title in works" :key="title">
+          <h3 class="text-black mb-1" v-text="title"></h3>
+          <div class="space-y-3">
+            <div v-for="work in positions" :key="[work.title, work.subtitle].join('_')">
+              <div class="mb-1 w-full text-gray-900 flex justify-between items-baseline space-x-2">
+                <h4 class="font-bold uppercase" v-text="work.subtitle"></h4>
+                <h5 class="font-semibold" v-text="work.timeline"></h5>
+              </div>
+              <ul class="list-disc pl-6">
                 <li v-for="(sentence, index) in work.details" :key="index" v-html="sentence" class="mb-1"></li>
               </ul>
               <p v-if="work.link" class="flex items-center font-normal text-gray-900">
@@ -43,13 +45,13 @@
           </div>
         </div>
       </resume-section>
-      <resume-section class="mb-2">
+      <resume-section>
         <template slot="header">Education</template>
         <div v-for="education in educations" class="mb-1" :key="education.title">
           <div class="inline-block space-x-1">
             <h3 class="
                 inline-block
-                font-semibold
+                font-bold
                 whitespace-no-wrap
                 text-gray-900
               " v-text="education.title"></h3>
@@ -57,7 +59,7 @@
                 inline-block
                 font-semibold
                 whitespace-no-wrap
-                text-gray-700
+                text-gray-800
               ">
               ({{ education.subtitle }})
             </h4>
@@ -69,14 +71,14 @@
           </div>
         </div>
       </resume-section>
-      <resume-section class="mb-2">
+      <resume-section>
         <template slot="header">Skills</template>
         <dl v-for="skill in skills" :key="skill.header" class="mb-1 flex space-x-1 items-baseline">
-          <dt class="flex-none font-semibold text-gray-800" v-text="skill.header + ': '"></dt>
+          <dt class="flex-none font-bold text-gray-800" v-text="skill.header + ': '"></dt>
           <dd class="text-xs" v-text="skill.list.join(', ')"></dd>
         </dl>
       </resume-section>
-      <resume-section class="mb-2">
+      <resume-section>
         <template slot="header">Awards / Recognitions</template>
         <ul class="mb-6 list-disc pl-4">
           <li v-for="achievement in achievements" :key="achievement.title" v-html="achievement.title" class="mb-1"></li>
@@ -153,22 +155,11 @@ export default {
 };
 </script>
 <style lang="postcss">
-summary {
-  @apply flex;
-}
 
 @page {
   margin: 0.1in;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.resume em {
-  @apply font-semibold italic;
-}
 
-@media print {
-  .resume em {
-    font-weight: semibold !important;
-    font-style: italic !important;
-  }
-}
 </style>

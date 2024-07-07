@@ -1,10 +1,17 @@
 title: Ruman Saleem
-subtitle: Software Engineer
+subtitle: Software Engineer (Full-Stack)
+showSummary: true
+summary: Experienced Full-Stack Software Engineer with nearly 4 years of expertise in building robust web applications. Proficient in Spring Boot, NextJS, React, and Apache Kafka. Proven track record of leading development teams, enhancing operational performance and delivering high-quality software solutions. Recognized for excellence in technical execution and team mentorship. Currently, working on building a Kafka GUI Client application as a side project while learning Rust Programming Language.
 links:
   - target: mailto:ruman63@gmail.com
     icon: at-sign
     label: "Email"
     text: ruman63@gmail.com
+
+  - target: tel:+918510052301
+    icon: phone
+    label: "Phone Number"
+    text: +91-8510052301
     
   - target: https://www.linkedin.com/in/ruman-saleem/
     icon: linkedin
